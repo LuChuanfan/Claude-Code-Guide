@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><title>obsidian trio</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { width: 900px; height: 460px; overflow: hidden; }
+  body {
+    background-color: #0F1A2E;
+    background-image: radial-gradient(circle, #1E293B 1px, transparent 1px);
+    background-size: 24px 24px;
+    background-position: 12px 12px;
+    font-family: 'JetBrains Mono', 'SF Mono', 'Consolas', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+    color: #F8FAFC;
+    padding: 28px 60px;
+  }
+  .title { font-size: 18px; color: #67E8F9; letter-spacing: 1px; font-weight: 600; margin-bottom: 6px; }
+  .subtitle { font-size: 13px; color: #94A3B8; margin-bottom: 26px; }
+  .row { display: flex; gap: 18px; align-items: stretch; }
+  .card { flex: 1; background: #1E293B; border-radius: 8px; padding: 18px 18px 16px; border-top: 3px solid #67E8F9; position: relative; }
+  .card-name { font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 700; color: #F8FAFC; margin-bottom: 4px; letter-spacing: 0.5px; }
+  .card-tag { font-size: 11px; color: #67E8F9; margin-bottom: 12px; }
+  .card-desc { font-size: 11px; color: #CBD5E1; line-height: 1.6; margin-bottom: 12px; }
+  .card-snippet { background: #0B1220; border: 1px solid #334155; border-radius: 4px; padding: 8px 10px; font-family: 'JetBrains Mono', monospace; font-size: 10px; color: #94A3B8; line-height: 1.55; }
+  .accent { color: #67E8F9; }
+  .key { color: #FBBF24; }
+  .vault-pic { background: #0B1220; border: 1px solid #334155; border-radius: 8px; padding: 16px 22px; margin-top: 22px; display: flex; align-items: center; gap: 22px; }
+  .vault-icon { width: 42px; height: 42px; background: linear-gradient(135deg,#7C3AED,#A78BFA); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: 800; color: white; font-size: 18px; flex-shrink: 0; }
+  .vault-text { font-size: 12px; color: #CBD5E1; line-height: 1.55; }
+  .vault-meta { font-size: 10px; color: #94A3B8; margin-top: 4px; }
+</style></head><body>
+  <div class="title">Obsidian 三件套 · 笔记 / 视图 / 命令</div>
+  <div class="subtitle">三个 skill 各管一摊事，加起来覆盖 Claude Code 操作 Obsidian vault 的全部场景</div>
+  <div class="row">
+    <div class="card">
+      <div class="card-name">obsidian-markdown</div>
+      <div class="card-tag">写笔记</div>
+      <div class="card-desc">处理 Obsidian 扩展语法，wikilink、callout、embed、property 都能正确生成。</div>
+      <div class="card-snippet">
+[[<span class="accent">README</span>]] 链接<br>
+![[image.png]] 嵌图<br>
+&gt; [!note] callout<br>
+<span class="key">tags:</span> [research]
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-name">obsidian-bases</div>
+      <div class="card-tag">造视图</div>
+      <div class="card-desc">生成 .base 文件，做数据库式的 table / cards / list / map 视图。</div>
+      <div class="card-snippet">
+filters:<br>
+&nbsp;&nbsp;<span class="key">tag</span>: <span class="accent">paper</span><br>
+formulas:<br>
+&nbsp;&nbsp;score: cited * 0.7<br>
+views: [table, cards]
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-name">obsidian-cli</div>
+      <div class="card-tag">操作 vault</div>
+      <div class="card-desc">通过命令行调 Obsidian，搜笔记、查 task、改 property、reload plugin。</div>
+      <div class="card-snippet">
+$ obsidian search <span class="accent">"V2G"</span><br>
+$ obsidian task list<br>
+$ obsidian prop set ...<br>
+$ obsidian reload-plugin
+      </div>
+    </div>
+  </div>
+  <div class="vault-pic">
+    <div class="vault-icon">📚</div>
+    <div class="vault-text">
+      LLM-Wiki，我自己的 Obsidian vault
+      <div class="vault-meta">25 页核心笔记 + 上百篇资料 / 装了三件套之后，整理 / 重构 / 补 frontmatter 都顺很多</div>
+    </div>
+  </div>
+</body></html>

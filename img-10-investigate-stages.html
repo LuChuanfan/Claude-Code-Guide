@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><title>investigate four stages</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { width: 900px; height: 420px; overflow: hidden; }
+  body {
+    background-color: #0F1A2E;
+    background-image: radial-gradient(circle, #1E293B 1px, transparent 1px);
+    background-size: 24px 24px;
+    background-position: 12px 12px;
+    font-family: 'JetBrains Mono', 'SF Mono', 'Consolas', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+    color: #F8FAFC;
+    padding: 28px 60px;
+  }
+  .title { font-size: 18px; color: #67E8F9; letter-spacing: 1px; font-weight: 600; margin-bottom: 6px; }
+  .subtitle { font-size: 13px; color: #94A3B8; margin-bottom: 18px; }
+  .iron-law { background: rgba(248,113,113,0.08); border-left: 3px solid #F87171; padding: 12px 18px; font-size: 13px; color: #FCA5A5; margin-bottom: 24px; letter-spacing: 0.4px; }
+  .stages { display: flex; gap: 14px; }
+  .stage { flex: 1; background: #1E293B; border-top: 3px solid #67E8F9; padding: 16px 14px; border-radius: 4px; position: relative; }
+  .stage-num { position: absolute; top: -12px; left: 14px; background: #0F1A2E; color: #67E8F9; padding: 0 8px; font-size: 11px; font-weight: 700; }
+  .stage-name { font-size: 14px; font-weight: 700; color: #F8FAFC; margin-bottom: 8px; letter-spacing: 0.5px; }
+  .stage-desc { font-size: 11px; color: #CBD5E1; line-height: 1.55; }
+  .stage-output { font-size: 10px; color: #67E8F9; margin-top: 10px; padding-top: 8px; border-top: 1px solid #334155; }
+  .arrows { display: flex; justify-content: space-between; padding: 6px 90px; color: #67E8F9; font-size: 14px; margin-top: -1px; }
+</style></head><body>
+  <div class="title">investigate · 系统化调试四阶段</div>
+  <div class="subtitle">EvoHarness3 那次 482 轮卡死，就是按这个流程一步步定位到的</div>
+  <div class="iron-law">铁律 · 没找到根因之前不能写修复代码</div>
+  <div class="stages">
+    <div class="stage">
+      <div class="stage-num">01</div>
+      <div class="stage-name">调查</div>
+      <div class="stage-desc">收集所有相关线索，日志、堆栈、复现条件、最近改了什么。不下结论。</div>
+      <div class="stage-output">→ debug-log.md 写下事实</div>
+    </div>
+    <div class="stage">
+      <div class="stage-num">02</div>
+      <div class="stage-name">分析</div>
+      <div class="stage-desc">从线索里找模式，缩小怀疑范围。区分事实和推测，避免过早下结论。</div>
+      <div class="stage-output">→ 三条最可能的路径</div>
+    </div>
+    <div class="stage">
+      <div class="stage-num">03</div>
+      <div class="stage-name">假设</div>
+      <div class="stage-desc">为最可能的路径写「假设 + 验证方法」。每个假设要有可证伪的实验。</div>
+      <div class="stage-output">→ 验证脚本与预期</div>
+    </div>
+    <div class="stage">
+      <div class="stage-num">04</div>
+      <div class="stage-name">实施</div>
+      <div class="stage-desc">假设被实验确认是根因，才写修复代码。否则回到第二阶段重新分析。</div>
+      <div class="stage-output">→ 修复 + 回归测试</div>
+    </div>
+  </div>
+  <div class="arrows">
+    <span>↻</span>
+    <span>↻</span>
+    <span>↻</span>
+  </div>
+</body></html>

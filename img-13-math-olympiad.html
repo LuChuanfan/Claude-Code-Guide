@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><title>math-olympiad</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { width: 900px; height: 480px; overflow: hidden; }
+  body {
+    background-color: #0F1A2E;
+    background-image: radial-gradient(circle, #1E293B 1px, transparent 1px);
+    background-size: 24px 24px;
+    background-position: 12px 12px;
+    font-family: 'JetBrains Mono', 'SF Mono', 'Consolas', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+    color: #F8FAFC;
+    padding: 28px 60px;
+  }
+  .title { font-size: 18px; color: #67E8F9; letter-spacing: 1px; font-weight: 600; margin-bottom: 6px; }
+  .subtitle { font-size: 13px; color: #94A3B8; margin-bottom: 22px; }
+  .case { background: #0B1220; border: 1px solid #334155; border-radius: 8px; padding: 18px 22px; }
+  .case-h { font-size: 12px; color: #FBBF24; letter-spacing: 0.5px; margin-bottom: 6px; }
+  .case-q { font-family: 'Times New Roman', 'PingFang SC', serif; font-size: 14px; color: #F8FAFC; line-height: 1.5; margin-bottom: 16px; }
+  .pipeline { display: flex; gap: 12px; }
+  .step { flex: 1; background: #1E293B; border-left: 3px solid #67E8F9; padding: 12px 14px; border-radius: 4px; }
+  .step-num { font-size: 11px; color: #67E8F9; font-weight: 700; letter-spacing: 0.6px; margin-bottom: 6px; }
+  .step-name { font-size: 13px; color: #F8FAFC; font-weight: 700; margin-bottom: 6px; }
+  .step-text { font-size: 11px; color: #CBD5E1; line-height: 1.55; font-family: 'Times New Roman', 'PingFang SC', serif; }
+  .step-tag { font-size: 9px; color: #94A3B8; margin-top: 6px; padding-top: 6px; border-top: 1px solid #334155; font-family: inherit; }
+  .footnote { margin-top: 18px; padding: 12px 18px; background: rgba(103,232,249,0.06); border-left: 3px solid #67E8F9; font-size: 12px; color: #CBD5E1; line-height: 1.55; }
+</style></head><body>
+  <div class="title">math-olympiad · 严谨证明 + 反例攻击 + 修补</div>
+  <div class="subtitle">Claude Code 处理证明题时启用更严格的推理流程，先证后攻再修</div>
+  <div class="case">
+    <div class="case-h">EXAMPLE · 组合优化边界证明</div>
+    <div class="case-q">证明，对任意 n ≥ 3 的连通图 G，其最大独立集 α(G) 满足 α(G) ≥ n / (Δ(G)+1)，其中 Δ(G) 为最大度。</div>
+    <div class="pipeline">
+      <div class="step">
+        <div class="step-num">STEP 01</div>
+        <div class="step-name">严谨证明</div>
+        <div class="step-text">用贪心法构造，每次选度最小的顶点，移除其闭邻域。每次移除至多 Δ+1 个顶点 ……</div>
+        <div class="step-tag">→ 草稿，包含完整推导链</div>
+      </div>
+      <div class="step">
+        <div class="step-num">STEP 02</div>
+        <div class="step-name">反例攻击</div>
+        <div class="step-text">主动找反例，若 G 是 K_{Δ+1}，则 α=1，n=Δ+1，等号成立但贪心顺序敏感。需补极端边界。</div>
+        <div class="step-tag">→ 自我证伪，找漏洞</div>
+      </div>
+      <div class="step">
+        <div class="step-num">STEP 03</div>
+        <div class="step-name">修补</div>
+        <div class="step-text">补充等号条件分析，约束 G 必须是 (Δ+1)-正则图的不交并。最终证毕。</div>
+        <div class="step-tag">→ 修补成可发表版</div>
+      </div>
+    </div>
+  </div>
+  <div class="footnote">应用数学 / 运筹优化 / 组合数学方向强烈推荐。我做组合优化边界证明的时候经常用。</div>
+</body></html>

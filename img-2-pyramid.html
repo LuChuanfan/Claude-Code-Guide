@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><title>Skill Priority Pyramid</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { width: 900px; height: 500px; overflow: hidden; }
+  body {
+    background-color: #0F1A2E;
+    background-image: radial-gradient(circle, #1E293B 1px, transparent 1px);
+    background-size: 24px 24px;
+    background-position: 12px 12px;
+    font-family: 'JetBrains Mono', 'SF Mono', 'Consolas', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+    color: #F8FAFC;
+    padding: 32px 60px;
+  }
+  .title { font-size: 18px; color: #67E8F9; letter-spacing: 1px; font-weight: 600; margin-bottom: 6px; }
+  .subtitle { font-size: 13px; color: #94A3B8; margin-bottom: 24px; }
+  svg { display: block; margin: 0 auto; }
+  .layer-text-main { font-size: 16px; fill: #F8FAFC; font-weight: 700; font-family: inherit; }
+  .layer-text-sub { font-size: 12px; fill: #CBD5E1; font-family: inherit; }
+  .side-note { font-size: 12px; fill: #94A3B8; font-family: inherit; }
+</style></head><body>
+  <div class="title">下载 SKILL 优先级金字塔</div>
+  <div class="subtitle">从顶到底，可信度递减；先上面找，没有再下面找</div>
+  <svg width="780" height="400" viewBox="0 0 780 400">
+    <polygon points="390,30 510,120 270,120" fill="#67E8F9" fill-opacity="0.85"/>
+    <polygon points="270,120 510,120 590,210 190,210" fill="#67E8F9" fill-opacity="0.45"/>
+    <polygon points="190,210 590,210 670,300 110,300" fill="#67E8F9" fill-opacity="0.18"/>
+    <text class="layer-text-main" x="390" y="80" text-anchor="middle" fill="#0F1A2E">第一档 · Anthropic 官方</text>
+    <text class="layer-text-sub" x="390" y="100" text-anchor="middle" fill="#0F1A2E">github.com/anthropics/skills</text>
+    <text class="layer-text-main" x="390" y="160" text-anchor="middle">第二档 · 圈内大 V</text>
+    <text class="layer-text-sub" x="390" y="182" text-anchor="middle">卡兹克 / 一泽 Eze / gstack 等</text>
+    <text class="layer-text-main" x="390" y="240" text-anchor="middle">第三档 · 个人项目</text>
+    <text class="layer-text-sub" x="390" y="262" text-anchor="middle">看 commit 频率与 issue 维护</text>
+    <text class="layer-text-sub" x="390" y="280" text-anchor="middle">至少近 3 个月有更新</text>
+    <line x1="510" y1="80" x2="640" y2="80" stroke="#67E8F9" stroke-width="0.8" stroke-dasharray="3,3"/>
+    <text class="side-note" x="650" y="78">流程稳健，跨平台</text>
+    <text class="side-note" x="650" y="92">长期维护</text>
+    <line x1="540" y1="160" x2="640" y2="160" stroke="#67E8F9" stroke-opacity="0.6" stroke-width="0.8" stroke-dasharray="3,3"/>
+    <text class="side-note" x="650" y="158">作者天天用</text>
+    <text class="side-note" x="650" y="172">问题修得快</text>
+    <line x1="600" y1="245" x2="660" y2="245" stroke="#67E8F9" stroke-opacity="0.4" stroke-width="0.8" stroke-dasharray="3,3"/>
+    <text class="side-note" x="670" y="243">有惊喜也有坑</text>
+    <text class="side-note" x="670" y="257">谨慎装</text>
+    <text class="side-note" x="120" y="340" text-anchor="start" fill="#94A3B8" font-style="italic">规则，先在第一档找，没有再下沉到第二档，最后才考虑第三档</text>
+  </svg>
+</body></html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><title>Skill Install Decision Flow</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { width: 900px; height: 540px; overflow: hidden; }
+  body {
+    background-color: #0F1A2E;
+    background-image: radial-gradient(circle, #1E293B 1px, transparent 1px);
+    background-size: 24px 24px;
+    background-position: 12px 12px;
+    font-family: 'JetBrains Mono', 'SF Mono', 'Consolas', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+    color: #F8FAFC;
+    padding: 28px 60px;
+  }
+  .title { font-size: 18px; color: #67E8F9; letter-spacing: 1px; font-weight: 600; margin-bottom: 6px; }
+  .subtitle { font-size: 13px; color: #94A3B8; margin-bottom: 18px; }
+  svg { display: block; margin: 0 auto; }
+  .node-text { font-size: 13px; fill: #F8FAFC; font-family: inherit; }
+  .node-text-bold { font-size: 13px; fill: #F8FAFC; font-weight: 700; font-family: inherit; }
+  .yes-text { font-size: 11px; fill: #67E8F9; font-family: inherit; }
+  .no-text { font-size: 11px; fill: #F87171; font-family: inherit; }
+  .end-good { font-size: 14px; fill: #67E8F9; font-weight: 700; font-family: inherit; }
+  .end-bad { font-size: 14px; fill: #F87171; font-weight: 700; font-family: inherit; }
+</style></head><body>
+  <div class="title">装一个新 SKILL 之前的决策流程</div>
+  <div class="subtitle">每次装 skill 之前，先把这条流程跑一遍</div>
+  <svg width="780" height="460" viewBox="0 0 780 460">
+    <defs>
+      <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+        <path d="M 0 0 L 10 5 L 0 10 z" fill="#67E8F9"/>
+      </marker>
+    </defs>
+    <rect x="290" y="10" width="200" height="50" rx="6" fill="#1E293B" stroke="#67E8F9" stroke-width="1.5"/>
+    <text class="node-text-bold" x="390" y="40" text-anchor="middle">想装新 skill</text>
+    <line x1="390" y1="60" x2="390" y2="90" stroke="#67E8F9" stroke-width="1.5" marker-end="url(#arrow)"/>
+    <polygon points="390,95 510,140 390,185 270,140" fill="#1E293B" stroke="#67E8F9" stroke-width="1.5"/>
+    <text class="node-text" x="390" y="135" text-anchor="middle">是不是 Anthropic 官方</text>
+    <text class="node-text" x="390" y="155" text-anchor="middle">或圈内大 V 的</text>
+    <line x1="510" y1="140" x2="630" y2="140" stroke="#F87171" stroke-width="1.5" marker-end="url(#arrow)"/>
+    <text class="no-text" x="570" y="132" text-anchor="middle">否</text>
+    <line x1="390" y1="185" x2="390" y2="215" stroke="#67E8F9" stroke-width="1.5" marker-end="url(#arrow)"/>
+    <text class="yes-text" x="402" y="205">是</text>
+    <rect x="630" y="115" width="140" height="50" rx="6" fill="#1E293B" stroke="#F87171" stroke-width="1.5"/>
+    <text class="node-text" x="700" y="140" text-anchor="middle">先看维护状态</text>
+    <text class="node-text" x="700" y="158" text-anchor="middle">commit 与 issue</text>
+    <line x1="700" y1="165" x2="700" y2="225" stroke="#67E8F9" stroke-width="1.5" marker-end="url(#arrow)"/>
+    <polygon points="390,220 510,265 390,310 270,265" fill="#1E293B" stroke="#67E8F9" stroke-width="1.5"/>
+    <text class="node-text" x="390" y="260" text-anchor="middle">让 Claude Code</text>
+    <text class="node-text" x="390" y="280" text-anchor="middle">查跟现有有冲突吗</text>
+    <line x1="270" y1="265" x2="150" y2="265" stroke="#F87171" stroke-width="1.5" marker-end="url(#arrow)"/>
+    <text class="no-text" x="210" y="257" text-anchor="middle">是，重叠</text>
+    <line x1="390" y1="310" x2="390" y2="340" stroke="#67E8F9" stroke-width="1.5" marker-end="url(#arrow)"/>
+    <text class="yes-text" x="402" y="330">否</text>
+    <rect x="20" y="240" width="130" height="50" rx="6" fill="#1E293B" stroke="#F87171" stroke-width="1.5"/>
+    <text class="node-text" x="85" y="265" text-anchor="middle">二选一</text>
+    <text class="node-text" x="85" y="282" text-anchor="middle">或不装</text>
+    <polygon points="390,340 510,385 390,430 270,385" fill="#1E293B" stroke="#67E8F9" stroke-width="1.5"/>
+    <text class="node-text" x="390" y="380" text-anchor="middle">每月会用到</text>
+    <text class="node-text" x="390" y="400" text-anchor="middle">至少一次吗</text>
+    <line x1="510" y1="385" x2="630" y2="385" stroke="#F87171" stroke-width="1.5" marker-end="url(#arrow)"/>
+    <text class="no-text" x="570" y="377" text-anchor="middle">否</text>
+    <text class="end-bad" x="700" y="392" text-anchor="middle">不装</text>
+    <line x1="390" y1="430" x2="390" y2="448" stroke="#67E8F9" stroke-width="1.5"/>
+    <text class="end-good" x="390" y="455" text-anchor="middle">装上 ✓</text>
+    <text class="yes-text" x="402" y="445">是</text>
+  </svg>
+</body></html>

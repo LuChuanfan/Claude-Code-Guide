@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><title>superpowers flow</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { width: 900px; height: 460px; overflow: hidden; }
+  body {
+    background-color: #0F1A2E;
+    background-image: radial-gradient(circle, #1E293B 1px, transparent 1px);
+    background-size: 24px 24px;
+    background-position: 12px 12px;
+    font-family: 'JetBrains Mono', 'SF Mono', 'Consolas', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+    color: #F8FAFC;
+    padding: 28px 60px;
+  }
+  .title { font-size: 18px; color: #67E8F9; letter-spacing: 1px; font-weight: 600; margin-bottom: 6px; }
+  .subtitle { font-size: 13px; color: #94A3B8; margin-bottom: 24px; }
+  svg { display: block; margin: 0 auto; }
+  .step-text-bold { font-size: 14px; fill: #F8FAFC; font-weight: 700; font-family: inherit; }
+  .step-text { font-size: 11px; fill: #CBD5E1; font-family: inherit; }
+  .step-tag { font-size: 10px; fill: #67E8F9; font-family: inherit; }
+  .lane-title { font-size: 12px; fill: #94A3B8; font-family: inherit; }
+</style></head><body>
+  <div class="title">superpowers 全家桶 · 项目级工作流</div>
+  <div class="subtitle">从一个想法到代码合并，五个 skill 串成完整工程链路</div>
+  <svg width="780" height="380" viewBox="0 0 780 380">
+    <defs>
+      <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+        <path d="M 0 0 L 10 5 L 0 10 z" fill="#67E8F9"/>
+      </marker>
+    </defs>
+    <text class="lane-title" x="60" y="40">阶段</text>
+    <text class="lane-title" x="60" y="220" text-anchor="start">输入 / 输出</text>
+    <line x1="60" y1="50" x2="760" y2="50" stroke="#334155" stroke-width="1"/>
+    <line x1="60" y1="170" x2="760" y2="170" stroke="#334155" stroke-width="1"/>
+    <g>
+      <rect x="80" y="70" width="120" height="80" rx="6" fill="#1E293B" stroke="#67E8F9" stroke-width="1.2"/>
+      <text class="step-tag" x="140" y="92" text-anchor="middle">① 想</text>
+      <text class="step-text-bold" x="140" y="115" text-anchor="middle">brainstorming</text>
+      <text class="step-text" x="140" y="135" text-anchor="middle">需求探索</text>
+    </g>
+    <line x1="200" y1="110" x2="220" y2="110" stroke="#67E8F9" stroke-width="1.5" marker-end="url(#ar)"/>
+    <g>
+      <rect x="220" y="70" width="120" height="80" rx="6" fill="#1E293B" stroke="#67E8F9" stroke-width="1.2"/>
+      <text class="step-tag" x="280" y="92" text-anchor="middle">② 计划</text>
+      <text class="step-text-bold" x="280" y="115" text-anchor="middle">writing-plans</text>
+      <text class="step-text" x="280" y="135" text-anchor="middle">细粒度任务</text>
+    </g>
+    <line x1="340" y1="110" x2="360" y2="110" stroke="#67E8F9" stroke-width="1.5" marker-end="url(#ar)"/>
+    <g>
+      <rect x="360" y="70" width="120" height="80" rx="6" fill="#1E293B" stroke="#67E8F9" stroke-width="1.2"/>
+      <text class="step-tag" x="420" y="92" text-anchor="middle">③ 实现</text>
+      <text class="step-text-bold" x="420" y="115" text-anchor="middle">executing-plans</text>
+      <text class="step-text" x="420" y="135" text-anchor="middle">TDD 走</text>
+    </g>
+    <line x1="480" y1="110" x2="500" y2="110" stroke="#67E8F9" stroke-width="1.5" marker-end="url(#ar)"/>
+    <g>
+      <rect x="500" y="70" width="120" height="80" rx="6" fill="#1E293B" stroke="#67E8F9" stroke-width="1.2"/>
+      <text class="step-tag" x="560" y="92" text-anchor="middle">④ 调试</text>
+      <text class="step-text-bold" x="560" y="115" text-anchor="middle">systematic-debug</text>
+      <text class="step-text" x="560" y="135" text-anchor="middle">先根因再修</text>
+    </g>
+    <line x1="620" y1="110" x2="640" y2="110" stroke="#67E8F9" stroke-width="1.5" marker-end="url(#ar)"/>
+    <g>
+      <rect x="640" y="70" width="120" height="80" rx="6" fill="#1E293B" stroke="#67E8F9" stroke-width="1.2"/>
+      <text class="step-tag" x="700" y="92" text-anchor="middle">⑤ 收尾</text>
+      <text class="step-text-bold" x="700" y="115" text-anchor="middle">finishing-branch</text>
+      <text class="step-text" x="700" y="135" text-anchor="middle">PR / 合并</text>
+    </g>
+    <text class="step-text" x="140" y="200" text-anchor="middle" fill="#94A3B8">用户痛点</text>
+    <text class="step-text" x="140" y="218" text-anchor="middle">→ 设计文档</text>
+    <text class="step-text" x="280" y="200" text-anchor="middle" fill="#94A3B8">设计文档</text>
+    <text class="step-text" x="280" y="218" text-anchor="middle">→ 任务清单</text>
+    <text class="step-text" x="420" y="200" text-anchor="middle" fill="#94A3B8">任务清单</text>
+    <text class="step-text" x="420" y="218" text-anchor="middle">→ 代码 + 测试</text>
+    <text class="step-text" x="560" y="200" text-anchor="middle" fill="#94A3B8">异常 / bug</text>
+    <text class="step-text" x="560" y="218" text-anchor="middle">→ 根因 + 修复</text>
+    <text class="step-text" x="700" y="200" text-anchor="middle" fill="#94A3B8">通过测试</text>
+    <text class="step-text" x="700" y="218" text-anchor="middle">→ PR / 上线</text>
+    <rect x="80" y="270" width="680" height="80" rx="6" fill="#0B1220" stroke="#475569" stroke-width="1" stroke-dasharray="4,4"/>
+    <text class="step-text" x="100" y="295" fill="#67E8F9" font-weight="600">关键</text>
+    <text class="step-text" x="100" y="315">brainstorming 必须把需求搞清楚 95% 才往下走，writing-plans 必须落到</text>
+    <text class="step-text" x="100" y="335">每一步纸上才动手。看似繁琐，比一头扎进去快得多。</text>
+  </svg>
+</body></html>

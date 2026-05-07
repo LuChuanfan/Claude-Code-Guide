@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><title>final checklist</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { width: 900px; height: 480px; overflow: hidden; }
+  body {
+    background-color: #0F1A2E;
+    background-image: radial-gradient(circle, #1E293B 1px, transparent 1px);
+    background-size: 24px 24px;
+    background-position: 12px 12px;
+    font-family: 'JetBrains Mono', 'SF Mono', 'Consolas', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+    color: #F8FAFC;
+    padding: 24px 60px;
+  }
+  .title { font-size: 18px; color: #67E8F9; letter-spacing: 1px; font-weight: 600; margin-bottom: 4px; }
+  .subtitle { font-size: 12px; color: #94A3B8; margin-bottom: 16px; }
+  .terminal { background: #0B0F1A; border: 1px solid #334155; border-radius: 8px; overflow: hidden; }
+  .term-bar { height: 26px; background: #111827; display: flex; align-items: center; padding: 0 12px; gap: 6px; border-bottom: 1px solid #1F2937; }
+  .term-bar span { width: 9px; height: 9px; border-radius: 50%; }
+  .r { background: #EF4444; } .y { background: #FBBF24; } .g { background: #10B981; }
+  .term-title { font-size: 11px; color: #94A3B8; margin-left: 12px; }
+  .term-body { padding: 18px 24px; font-family: 'JetBrains Mono', 'SF Mono', monospace; font-size: 12px; line-height: 1.7; }
+  .row { display: grid; grid-template-columns: 100px 1fr 120px; gap: 16px; padding: 6px 0; border-bottom: 1px dashed #1E293B; }
+  .row.head { color: #67E8F9; font-weight: 600; border-bottom: 1px solid #334155; padding-bottom: 8px; }
+  .cat { color: #67E8F9; }
+  .name { color: #F8FAFC; }
+  .pri-must { color: #67E8F9; font-weight: 600; }
+  .pri-cond { color: #FBBF24; }
+  .pri-keep { color: #94A3B8; }
+  .footer { margin-top: 14px; text-align: center; font-size: 11px; color: #94A3B8; letter-spacing: 0.6px; }
+  .footer .url { color: #67E8F9; }
+</style></head><body>
+  <div class="title">研究生必装 SKILL 清单（13 项 / 健康水位 12-15）</div>
+  <div class="subtitle">这是我研究生这两年沉淀下来的合集，希望帮你少装一些没用的</div>
+  <div class="terminal">
+    <div class="term-bar">
+      <span class="r"></span><span class="y"></span><span class="g"></span>
+      <span class="term-title">~/.claude/skills/  ·  skill list</span>
+    </div>
+    <div class="term-body">
+      <div class="row head"><span>类型</span><span>Skill</span><span>优先级</span></div>
+      <div class="row"><span class="cat">写作</span><span class="name">khazix-writer / docx + pptx</span><span class="pri-must">必装</span></div>
+      <div class="row"><span class="cat">工作流</span><span class="name">superpowers / neat-freak</span><span class="pri-must">必装</span></div>
+      <div class="row"><span class="cat">设计</span><span class="name">frontend-design</span><span class="pri-must">必装</span></div>
+      <div class="row"><span class="cat">研究</span><span class="name">hv-analysis / investigate</span><span class="pri-must">必装</span></div>
+      <div class="row"><span class="cat">联网</span><span class="name">web-access</span><span class="pri-must">必装</span></div>
+      <div class="row"><span class="cat">笔记</span><span class="name">obsidian-markdown / bases / cli</span><span class="pri-cond">用 Obsidian 才装</span></div>
+      <div class="row"><span class="cat">学术</span><span class="name">math-olympiad</span><span class="pri-cond">看研究方向</span></div>
+      <div class="row"><span class="cat">备用</span><span class="name">skill-creator</span><span class="pri-keep">装着，少用</span></div>
+    </div>
+  </div>
+  <div class="footer">完整文章 + Claude Code 完全指南 · <span class="url">github.com/LuChuanfan/Claude-Code-Guide</span></div>
+</body></html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><title>HV analysis axes</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { width: 900px; height: 480px; overflow: hidden; }
+  body {
+    background-color: #0F1A2E;
+    background-image: radial-gradient(circle, #1E293B 1px, transparent 1px);
+    background-size: 24px 24px;
+    background-position: 12px 12px;
+    font-family: 'JetBrains Mono', 'SF Mono', 'Consolas', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+    color: #F8FAFC;
+    padding: 28px 60px;
+  }
+  .title { font-size: 18px; color: #67E8F9; letter-spacing: 1px; font-weight: 600; margin-bottom: 6px; }
+  .subtitle { font-size: 13px; color: #94A3B8; margin-bottom: 18px; }
+  svg { display: block; margin: 0 auto; }
+  .axis-label { font-size: 13px; fill: #67E8F9; font-weight: 600; font-family: inherit; }
+  .point-text { font-size: 11px; fill: #CBD5E1; font-family: inherit; }
+  .insight-text { font-size: 14px; fill: #FBBF24; font-weight: 700; font-family: inherit; }
+  .meta { font-size: 11px; fill: #94A3B8; font-family: inherit; }
+  .footnote { font-size: 11px; fill: #94A3B8; font-family: inherit; font-style: italic; }
+</style></head><body>
+  <div class="title">hv-analysis 横纵分析法 · 双轴框架</div>
+  <div class="subtitle">纵轴追完整生命历程，横轴对比同期竞品，交叉点产出独到洞察</div>
+  <svg width="780" height="400" viewBox="0 0 780 400">
+    <defs>
+      <marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto">
+        <path d="M 0 0 L 10 5 L 0 10 z" fill="#67E8F9"/>
+      </marker>
+    </defs>
+    <line x1="100" y1="350" x2="700" y2="350" stroke="#67E8F9" stroke-width="2" marker-end="url(#ah)"/>
+    <line x1="390" y1="360" x2="390" y2="40" stroke="#67E8F9" stroke-width="2" marker-end="url(#ah)"/>
+    <text class="axis-label" x="710" y="354">横轴 / 同类竞品</text>
+    <text class="axis-label" x="395" y="35">纵轴 / 时间</text>
+    <text class="meta" x="100" y="370">竞品 A</text>
+    <text class="meta" x="220" y="370">竞品 B</text>
+    <text class="meta" x="500" y="370">竞品 C</text>
+    <text class="meta" x="620" y="370">竞品 D</text>
+    <text class="meta" x="376" y="80" text-anchor="end">现在</text>
+    <text class="meta" x="376" y="180" text-anchor="end">v2.0</text>
+    <text class="meta" x="376" y="270" text-anchor="end">诞生</text>
+    <circle cx="120" cy="180" r="5" fill="#67E8F9"/>
+    <text class="point-text" x="130" y="184">FunSearch (2024)</text>
+    <circle cx="240" cy="120" r="5" fill="#67E8F9"/>
+    <text class="point-text" x="250" y="124">AlphaEvolve (2025)</text>
+    <circle cx="510" cy="200" r="5" fill="#67E8F9"/>
+    <text class="point-text" x="520" y="204">AVO Harness</text>
+    <circle cx="630" cy="100" r="5" fill="#67E8F9"/>
+    <text class="point-text" x="640" y="104">Codex Eval</text>
+    <circle cx="390" cy="270" r="6" fill="#67E8F9" fill-opacity="0.6"/>
+    <text class="point-text" x="400" y="274">Harness 概念诞生</text>
+    <circle cx="390" cy="180" r="6" fill="#67E8F9" fill-opacity="0.6"/>
+    <text class="point-text" x="400" y="184">长期任务支持</text>
+    <circle cx="390" cy="100" r="9" fill="#FBBF24" stroke="#F8FAFC" stroke-width="1.5"/>
+    <text class="insight-text" x="400" y="104">独到洞察 / 当下</text>
+    <text class="footnote" x="100" y="395">这条赛道的真实创新点 / 谁在领跑 / 未来朝哪去</text>
+  </svg>
+</body></html>
