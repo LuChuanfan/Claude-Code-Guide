@@ -52,9 +52,7 @@ skill 不是越多越好。
 
 被砍掉的关键词，往往恰好就是触发那个 skill 的关键词。skill 还在那儿，但 Claude 看不见它该什么时候被调用了。表现出来就是，明明装了 hv-analysis，让它做深度研究它愣是不调用，凭一身本事在那儿瞎答。
 
-我自己的经验，当下健康的 skill 装机量大概是 12 到 15 个左右。这不是官方数字，是我从 49 个一路裁回来摸到的舒适区。
-
-![skill 装机量 vs 召回准确率，12-15 是健康水位](img-1-skill-curve.png)
+我自己的经验，当下健康的 skill 装机量大概是 12 到 15 个左右。这不是官方数字，也不是 Anthropic 公布过什么性能曲线，就是我从 49 个一路裁回来摸到的舒适区。
 
 不是说装 30 个就一定崩。但你装到 30 个之后，每装一个新的，都得先问一句，这个 skill 能让我活得更好吗？还是只是看起来酷？
 
@@ -110,8 +108,6 @@ Claude Code 会自己去 GitHub 看仓库、扫你 `~/.claude/skills/` 已装的
 
 我用它写过两篇公众号文章，发出去的反应都还行。最大的好处，写完之后不用反复读自己的稿子改，自检流程会把你那种「为新而新」「拼装感强」的句子直接揪出来。
 
-![khazix-writer 自检前后对照](img-4-khazix-compare.png)
-
 安装命令，对 Claude Code 说，
 
 > 帮我安装这个 skill，地址是 `https://github.com/KKKKhazix/khazix-skills/tree/main/khazix-writer`
@@ -129,8 +125,6 @@ Anthropic 官方出品的四件套，公众号上有很多人推过。
 我用得最多的是 docx 和 pptx。
 
 docx 用来给我的论文做 Word 版本（IEEE 投稿要 PDF 但学校还要 Word 备案），输出来的格式整齐，标题级别对齐。pptx 配合 frontend-design 一起用，做学术汇报 PPT 颜值能再上一个台阶。
-
-![docx 处理论文 Word 排版前后](img-5-docx-compare.png)
 
 安装命令，对 Claude Code 说，
 
@@ -168,8 +162,6 @@ superpowers 不是单一 skill，是一整个 plugin 包，里面有 14 个内�
 
 它的强度很高。盘点是机械式枚举，每个文件都要明确标「评估过 / 要改 / 不用改」，不能跳过。最后还会跑一份「自检清单」逐条验证。
 
-![neat-freak 整理前后对照](img-7-neatfreak-compare.png)
-
 研究生写代码最容易掉的坑，文档跟代码不同步。代码改了，CLAUDE.md 没改，下一次会话 Claude 还按旧的来。记忆里写着「Sangfor 是性能瓶颈」，但其实那是三个月前的判断，现在已经验证过没问题了。这些过期信息攒多了，下一次 Claude 就基于错误前提做决策。
 
 neat-freak 就是定期帮你扫一遍。
@@ -187,8 +179,6 @@ Anthropic 官方插件市场排名第一的 skill。
 它解决一件事，AI 做前端容易掉的坑。比如默认字体永远是 Inter / Roboto / Arial，配色永远是紫色渐变配白底，按钮永远是圆角 + drop-shadow。这些都是 AI 模型在训练数据里见得最多的东西，懒省事就直接用，结果做出来的页面满屏「AI 味」。
 
 frontend-design 的核心做法，强迫 AI 在写代码前先想清楚美学方向，是极简主义、复古未来风、新闻杂志风、还是日式禅意。然后排版、留白、字体、动效都围绕这个方向选。
-
-![frontend-design 应用前后对照](img-8-frontend-design.png)
 
 我在 GitHub 上的 Claude-Code-Guide 那两张封面就是用这 skill 做的。Terminal Luminance 视觉系统（深蓝黑底 + cyan 强调色 + 几何感）就是它帮我理出来的方向。
 

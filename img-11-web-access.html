@@ -1,93 +1,73 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="UTF-8"><title>web-access demo</title>
+<html lang="en"><head><meta charset="UTF-8"><title>img-11</title>
 <style>
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  html, body { width: 900px; height: 460px; overflow: hidden; }
-  body {
-    background-color: #0F1A2E;
-    background-image: radial-gradient(circle, #1E293B 1px, transparent 1px);
-    background-size: 24px 24px;
-    background-position: 12px 12px;
-    font-family: 'JetBrains Mono', 'SF Mono', 'Consolas', 'PingFang SC', 'Microsoft YaHei', sans-serif;
-    color: #F8FAFC;
-    padding: 28px 60px;
-  }
-  .title { font-size: 18px; color: #67E8F9; letter-spacing: 1px; font-weight: 600; margin-bottom: 6px; }
-  .subtitle { font-size: 13px; color: #94A3B8; margin-bottom: 22px; }
-  .layout { display: flex; gap: 18px; }
-  .browser { width: 380px; background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 20px rgba(103,232,249,0.08); }
-  .browser-bar { height: 30px; background: #F3F4F6; display: flex; align-items: center; padding: 0 12px; gap: 8px; border-bottom: 1px solid #E5E7EB; }
-  .dot { width: 9px; height: 9px; border-radius: 50%; }
-  .r { background: #EF4444; } .y { background: #FBBF24; } .g { background: #10B981; }
-  .url-bar { flex: 1; background: white; border: 1px solid #E5E7EB; border-radius: 12px; padding: 3px 10px; font-size: 11px; color: #4B5563; margin-left: 8px; }
-  .xhs { background: white; padding: 16px 14px; }
-  .xhs-h { display: flex; align-items: center; gap: 8px; margin-bottom: 12px; padding-bottom: 8px; border-bottom: 1px solid #F3F4F6; }
-  .xhs-logo { width: 22px; height: 22px; background: #FF2442; border-radius: 6px; color: white; font-weight: 800; font-size: 14px; display: flex; align-items: center; justify-content: center; }
-  .xhs-tab { font-size: 11px; color: #1F2937; font-weight: 600; }
-  .xhs-card { display: flex; gap: 8px; margin-bottom: 10px; padding: 8px; background: #FAFAFA; border-radius: 6px; }
-  .xhs-thumb { width: 56px; height: 56px; background: linear-gradient(135deg,#FCA5A5,#FBBF24); border-radius: 4px; flex-shrink: 0; }
-  .xhs-thumb.t2 { background: linear-gradient(135deg,#A5B4FC,#67E8F9); }
-  .xhs-thumb.t3 { background: linear-gradient(135deg,#86EFAC,#34D399); }
-  .xhs-text { font-size: 11px; color: #1F2937; line-height: 1.4; }
-  .xhs-meta { font-size: 9px; color: #9CA3AF; margin-top: 4px; }
-  .terminal { flex: 1; background: #0B0F1A; border: 1px solid #334155; border-radius: 8px; padding: 14px 16px; font-family: 'JetBrains Mono', monospace; font-size: 12px; line-height: 1.55; }
-  .term-prompt { color: #67E8F9; }
-  .term-out { color: #CBD5E1; }
-  .term-key { color: #FBBF24; }
-  .term-comment { color: #64748B; }
-  .badge { display: inline-block; background: rgba(103,232,249,0.12); color: #67E8F9; padding: 1px 6px; border-radius: 3px; font-size: 10px; }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{width:1080px;height:580px;overflow:hidden}
+  body{background:#F8F4ED;background-image:radial-gradient(circle at 8% 14%,rgba(244,196,48,.06) 0,transparent 18%),radial-gradient(circle at 92% 86%,rgba(31,31,31,.04) 0,transparent 22%);font-family:'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;color:#1F1F1F;padding:24px 50px;position:relative}
+  body::before{content:'';position:absolute;top:14px;right:30px;width:78px;height:52px;background:#F4C430;opacity:.85;border:2.5px solid #1F1F1F;border-radius:4px 32px 4px 4px;transform:rotate(8deg)}
+  body::after{content:'';position:absolute;bottom:14px;left:22px;width:56px;height:14px;background:#1F1F1F;border-radius:50%;transform:rotate(-15deg);opacity:.85}
+  .title{font-size:46px;font-weight:900;letter-spacing:1px;margin-bottom:4px;line-height:1.1}
+  .title .hl{background:linear-gradient(transparent 58%,#F4C430 58%,#F4C430 94%,transparent 94%);padding:0 6px}
+  .subtitle{font-size:17px;color:#444;margin-bottom:18px;font-weight:500}
+  .demo-tag{position:absolute;top:30px;right:120px;background:#FCE99A;border:2.5px solid #1F1F1F;padding:5px 12px;border-radius:4px;font-size:13px;font-weight:800;transform:rotate(4deg);color:#1F1F1F}
+  .layout{display:flex;gap:24px;margin-top:8px}
+  .col{flex:1;background:#FFFCF6;border:3px solid #1F1F1F;border-radius:8px;padding:0;box-shadow:5px 5px 0 #1F1F1F;overflow:hidden}
+  .col-h{background:#F4C430;border-bottom:2.5px solid #1F1F1F;padding:6px 14px;font-size:14px;font-weight:800;letter-spacing:0.5px}
+  .col-body{padding:14px 16px}
+  .browser-bar{display:flex;align-items:center;gap:6px;padding:6px 10px;background:#FCE99A;border-bottom:2px solid #1F1F1F;border-radius:0;font-size:11px}
+  .dot{width:9px;height:9px;border-radius:50%;border:1.5px solid #1F1F1F}
+  .dot-r{background:#FF6B6B}.dot-y{background:#FFD93D}.dot-g{background:#6BCB77}
+  .url{flex:1;background:#FFFCF6;border:1.5px solid #1F1F1F;padding:2px 8px;font-size:11px;border-radius:99px;font-family:'JetBrains Mono',monospace;color:#444}
+  .xhs-h{display:flex;align-items:center;gap:8px;padding-bottom:8px;margin-bottom:8px;border-bottom:2px dashed #1F1F1F}
+  .xhs-logo{width:24px;height:24px;background:#FF2442;color:#FFF;border:2px solid #1F1F1F;border-radius:6px;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:13px}
+  .xhs-tag{font-size:13px;font-weight:700}
+  .xhs-card{display:flex;gap:8px;margin-bottom:8px;padding:6px;background:#FCE99A;border:1.5px solid #1F1F1F;border-radius:4px}
+  .xhs-thumb{width:50px;height:50px;background:#F4C430;border:1.5px solid #1F1F1F;border-radius:4px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:22px}
+  .xhs-text{font-size:12px;line-height:1.35;color:#1F1F1F;font-weight:600}
+  .xhs-meta{font-size:10px;color:#555;margin-top:2px}
+  .term{font-family:'JetBrains Mono','Consolas',monospace;font-size:13px;line-height:1.65}
+  .term-pr{color:#1F1F1F;font-weight:700}
+  .term-out{color:#1F1F1F}
+  .term-mute{color:#777}
+  .term-hl{background:#F4C430;padding:0 4px;font-weight:700}
+  .term-ok{color:#0a8a3a;font-weight:700}
+  .footer{position:absolute;bottom:18px;right:50px;font-size:14px;color:#444;background:#FFFCF6;border-left:4px solid #F4C430;padding:3px 12px;transform:rotate(-1deg);font-weight:600}
 </style></head><body>
-  <div class="title">web-access · 带登录态抓站内内容</div>
+  <div class="title">web-access，<span class="hl">带登录态抓站内内容</span></div>
   <div class="subtitle">通过 Chrome DevTools Protocol 直连本地浏览器，小红书 / B 站 / 飞书都能读</div>
+  <div class="demo-tag">流程示意</div>
   <div class="layout">
-    <div class="browser">
+    <div class="col">
+      <div class="col-h">小红书 · 已登录</div>
       <div class="browser-bar">
-        <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
-        <div class="url-bar">xiaohongshu.com/explore?q=Claude+Code</div>
+        <span class="dot dot-r"></span><span class="dot dot-y"></span><span class="dot dot-g"></span>
+        <span class="url">xiaohongshu.com/explore?q=Claude+Code</span>
       </div>
-      <div class="xhs">
-        <div class="xhs-h">
-          <div class="xhs-logo">小</div>
-          <div class="xhs-tab">小红书 / 已登录 · 推荐</div>
-        </div>
-        <div class="xhs-card">
-          <div class="xhs-thumb"></div>
-          <div>
-            <div class="xhs-text">研究生用 Claude Code 的一些骚操作</div>
-            <div class="xhs-meta">@博士在读 · 1.2 万赞</div>
-          </div>
-        </div>
-        <div class="xhs-card">
-          <div class="xhs-thumb t2"></div>
-          <div>
-            <div class="xhs-text">从 GPT-4 切到 Claude，效率涨了三倍</div>
-            <div class="xhs-meta">@AI 实习生 · 4.8k 赞</div>
-          </div>
-        </div>
-        <div class="xhs-card">
-          <div class="xhs-thumb t3"></div>
-          <div>
-            <div class="xhs-text">Claude Code 的 skill 我装到 50 个还是变笨</div>
-            <div class="xhs-meta">@大模型工友 · 2.3k 赞</div>
-          </div>
-        </div>
+      <div class="col-body">
+        <div class="xhs-h"><div class="xhs-logo">小</div><div class="xhs-tag">小红书 / 推荐</div></div>
+        <div class="xhs-card"><div class="xhs-thumb">📚</div><div><div class="xhs-text">研究生用 Claude Code 的一些骚操作</div><div class="xhs-meta">@博士在读 · 1.2 万赞</div></div></div>
+        <div class="xhs-card"><div class="xhs-thumb">⚡</div><div><div class="xhs-text">从 GPT-4 切到 Claude，效率涨三倍</div><div class="xhs-meta">@AI 实习生 · 4.8k 赞</div></div></div>
+        <div class="xhs-card"><div class="xhs-thumb">🔧</div><div><div class="xhs-text">Skill 装到 50 个反而变笨</div><div class="xhs-meta">@大模型工友 · 2.3k 赞</div></div></div>
       </div>
     </div>
-    <div class="terminal">
-      <div class="term-comment"># 一句话调用 web-access</div>
-      <div><span class="term-prompt">$</span> <span class="term-out">让 web-access 帮我搜小红书上「Claude Code 研究生」的高赞笔记</span></div>
-      <br>
-      <div class="term-comment"># skill 自动启动</div>
-      <div class="term-out">→ 通过 CDP 连接 Chrome <span class="badge">已登录态</span></div>
-      <div class="term-out">→ 打开 xiaohongshu.com/explore</div>
-      <div class="term-out">→ 注入查询关键词</div>
-      <div class="term-out">→ 抓取动态渲染内容</div>
-      <div class="term-out">→ Jina 预处理节省 token</div>
-      <br>
-      <div class="term-comment"># 输出</div>
-      <div class="term-out">✓ 抓到 <span class="term-key">23 篇</span> 笔记</div>
-      <div class="term-out">✓ 沉淀 xiaohongshu.com 操作经验</div>
-      <div class="term-out">✓ 下次同站直接复用</div>
+    <div class="col">
+      <div class="col-h">Claude Code 终端</div>
+      <div class="col-body term">
+        <div class="term-mute"># 一句话调用 web-access</div>
+        <div><span class="term-pr">$</span> <span class="term-out">让 web-access 帮我搜小红书上「Claude Code 研究生」的高赞笔记</span></div>
+        <br>
+        <div class="term-mute"># skill 自动启动</div>
+        <div class="term-out">→ CDP 连接 Chrome <span class="term-hl">已登录</span></div>
+        <div class="term-out">→ 打开 xiaohongshu.com/explore</div>
+        <div class="term-out">→ 注入查询 + 抓动态渲染</div>
+        <div class="term-out">→ Jina 预处理，省 token</div>
+        <br>
+        <div class="term-mute"># 输出</div>
+        <div class="term-ok">✓ 抓到 23 篇笔记</div>
+        <div class="term-ok">✓ 沉淀 xiaohongshu.com 经验</div>
+        <div class="term-ok">✓ 下次同站直接复用</div>
+      </div>
     </div>
   </div>
+  <div class="footer">研究生必装的 11 个 Skill</div>
 </body></html>

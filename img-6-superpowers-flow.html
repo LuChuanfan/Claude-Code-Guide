@@ -1,84 +1,40 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="UTF-8"><title>superpowers flow</title>
+<html lang="en"><head><meta charset="UTF-8"><title>img-6</title>
 <style>
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  html, body { width: 900px; height: 460px; overflow: hidden; }
-  body {
-    background-color: #0F1A2E;
-    background-image: radial-gradient(circle, #1E293B 1px, transparent 1px);
-    background-size: 24px 24px;
-    background-position: 12px 12px;
-    font-family: 'JetBrains Mono', 'SF Mono', 'Consolas', 'PingFang SC', 'Microsoft YaHei', sans-serif;
-    color: #F8FAFC;
-    padding: 28px 60px;
-  }
-  .title { font-size: 18px; color: #67E8F9; letter-spacing: 1px; font-weight: 600; margin-bottom: 6px; }
-  .subtitle { font-size: 13px; color: #94A3B8; margin-bottom: 24px; }
-  svg { display: block; margin: 0 auto; }
-  .step-text-bold { font-size: 14px; fill: #F8FAFC; font-weight: 700; font-family: inherit; }
-  .step-text { font-size: 11px; fill: #CBD5E1; font-family: inherit; }
-  .step-tag { font-size: 10px; fill: #67E8F9; font-family: inherit; }
-  .lane-title { font-size: 12px; fill: #94A3B8; font-family: inherit; }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{width:1080px;height:520px;overflow:hidden}
+  body{background:#F8F4ED;background-image:radial-gradient(circle at 8% 14%,rgba(244,196,48,.06) 0,transparent 18%),radial-gradient(circle at 92% 86%,rgba(31,31,31,.04) 0,transparent 22%);font-family:'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;color:#1F1F1F;padding:26px 50px;position:relative}
+  body::before{content:'';position:absolute;top:14px;right:30px;width:78px;height:52px;background:#F4C430;opacity:.85;border:2.5px solid #1F1F1F;border-radius:4px 32px 4px 4px;transform:rotate(8deg)}
+  body::after{content:'';position:absolute;bottom:14px;left:22px;width:56px;height:14px;background:#1F1F1F;border-radius:50%;transform:rotate(-15deg);opacity:.85}
+  .title{font-size:48px;font-weight:900;letter-spacing:1px;margin-bottom:4px;line-height:1.1}
+  .title .hl{background:linear-gradient(transparent 58%,#F4C430 58%,#F4C430 94%,transparent 94%);padding:0 6px}
+  .subtitle{font-size:18px;color:#444;margin-bottom:30px;font-weight:500}
+  .lanes{display:flex;align-items:center;justify-content:space-between;gap:0;margin-top:10px}
+  .lane{flex:1;background:#FFFCF6;border:3px solid #1F1F1F;border-radius:8px;padding:14px 8px 12px;text-align:center;box-shadow:4px 4px 0 #1F1F1F;position:relative;min-height:200px}
+  .lane.first{background:#F4C430}
+  .lane.last{background:#FCE99A}
+  .lane-num{display:inline-block;background:#1F1F1F;color:#FFFCF6;font-size:14px;padding:2px 10px;border-radius:99px;margin-bottom:8px;font-weight:700}
+  .lane-name{font-size:18px;font-weight:900;letter-spacing:0.5px;margin-bottom:6px;line-height:1.15;font-family:'JetBrains Mono','Consolas',monospace}
+  .lane-zh{font-size:16px;font-weight:700;color:#1F1F1F;margin-bottom:10px}
+  .lane-io{font-size:13px;color:#333;line-height:1.45;border-top:1.5px dashed #1F1F1F;padding-top:8px;margin-top:6px;text-align:left;padding-left:8px}
+  .lane-io b{color:#1F1F1F}
+  .arr{font-size:28px;color:#1F1F1F;font-weight:900;flex:0 0 22px;text-align:center}
+  .stamp{position:absolute;left:50px;bottom:30px;background:#F4C430;color:#1F1F1F;padding:8px 16px;border:3px solid #1F1F1F;border-radius:6px;font-size:15px;font-weight:800;transform:rotate(-3deg);box-shadow:4px 4px 0 #1F1F1F;max-width:380px;line-height:1.35}
+  .footer{position:absolute;bottom:18px;right:50px;font-size:14px;color:#444;background:#FFFCF6;border-left:4px solid #F4C430;padding:3px 12px;transform:rotate(-1deg);font-weight:600}
 </style></head><body>
-  <div class="title">superpowers 全家桶 · 项目级工作流</div>
-  <div class="subtitle">从一个想法到代码合并，五个 skill 串成完整工程链路</div>
-  <svg width="780" height="380" viewBox="0 0 780 380">
-    <defs>
-      <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
-        <path d="M 0 0 L 10 5 L 0 10 z" fill="#67E8F9"/>
-      </marker>
-    </defs>
-    <text class="lane-title" x="60" y="40">阶段</text>
-    <text class="lane-title" x="60" y="220" text-anchor="start">输入 / 输出</text>
-    <line x1="60" y1="50" x2="760" y2="50" stroke="#334155" stroke-width="1"/>
-    <line x1="60" y1="170" x2="760" y2="170" stroke="#334155" stroke-width="1"/>
-    <g>
-      <rect x="80" y="70" width="120" height="80" rx="6" fill="#1E293B" stroke="#67E8F9" stroke-width="1.2"/>
-      <text class="step-tag" x="140" y="92" text-anchor="middle">① 想</text>
-      <text class="step-text-bold" x="140" y="115" text-anchor="middle">brainstorming</text>
-      <text class="step-text" x="140" y="135" text-anchor="middle">需求探索</text>
-    </g>
-    <line x1="200" y1="110" x2="220" y2="110" stroke="#67E8F9" stroke-width="1.5" marker-end="url(#ar)"/>
-    <g>
-      <rect x="220" y="70" width="120" height="80" rx="6" fill="#1E293B" stroke="#67E8F9" stroke-width="1.2"/>
-      <text class="step-tag" x="280" y="92" text-anchor="middle">② 计划</text>
-      <text class="step-text-bold" x="280" y="115" text-anchor="middle">writing-plans</text>
-      <text class="step-text" x="280" y="135" text-anchor="middle">细粒度任务</text>
-    </g>
-    <line x1="340" y1="110" x2="360" y2="110" stroke="#67E8F9" stroke-width="1.5" marker-end="url(#ar)"/>
-    <g>
-      <rect x="360" y="70" width="120" height="80" rx="6" fill="#1E293B" stroke="#67E8F9" stroke-width="1.2"/>
-      <text class="step-tag" x="420" y="92" text-anchor="middle">③ 实现</text>
-      <text class="step-text-bold" x="420" y="115" text-anchor="middle">executing-plans</text>
-      <text class="step-text" x="420" y="135" text-anchor="middle">TDD 走</text>
-    </g>
-    <line x1="480" y1="110" x2="500" y2="110" stroke="#67E8F9" stroke-width="1.5" marker-end="url(#ar)"/>
-    <g>
-      <rect x="500" y="70" width="120" height="80" rx="6" fill="#1E293B" stroke="#67E8F9" stroke-width="1.2"/>
-      <text class="step-tag" x="560" y="92" text-anchor="middle">④ 调试</text>
-      <text class="step-text-bold" x="560" y="115" text-anchor="middle">systematic-debug</text>
-      <text class="step-text" x="560" y="135" text-anchor="middle">先根因再修</text>
-    </g>
-    <line x1="620" y1="110" x2="640" y2="110" stroke="#67E8F9" stroke-width="1.5" marker-end="url(#ar)"/>
-    <g>
-      <rect x="640" y="70" width="120" height="80" rx="6" fill="#1E293B" stroke="#67E8F9" stroke-width="1.2"/>
-      <text class="step-tag" x="700" y="92" text-anchor="middle">⑤ 收尾</text>
-      <text class="step-text-bold" x="700" y="115" text-anchor="middle">finishing-branch</text>
-      <text class="step-text" x="700" y="135" text-anchor="middle">PR / 合并</text>
-    </g>
-    <text class="step-text" x="140" y="200" text-anchor="middle" fill="#94A3B8">用户痛点</text>
-    <text class="step-text" x="140" y="218" text-anchor="middle">→ 设计文档</text>
-    <text class="step-text" x="280" y="200" text-anchor="middle" fill="#94A3B8">设计文档</text>
-    <text class="step-text" x="280" y="218" text-anchor="middle">→ 任务清单</text>
-    <text class="step-text" x="420" y="200" text-anchor="middle" fill="#94A3B8">任务清单</text>
-    <text class="step-text" x="420" y="218" text-anchor="middle">→ 代码 + 测试</text>
-    <text class="step-text" x="560" y="200" text-anchor="middle" fill="#94A3B8">异常 / bug</text>
-    <text class="step-text" x="560" y="218" text-anchor="middle">→ 根因 + 修复</text>
-    <text class="step-text" x="700" y="200" text-anchor="middle" fill="#94A3B8">通过测试</text>
-    <text class="step-text" x="700" y="218" text-anchor="middle">→ PR / 上线</text>
-    <rect x="80" y="270" width="680" height="80" rx="6" fill="#0B1220" stroke="#475569" stroke-width="1" stroke-dasharray="4,4"/>
-    <text class="step-text" x="100" y="295" fill="#67E8F9" font-weight="600">关键</text>
-    <text class="step-text" x="100" y="315">brainstorming 必须把需求搞清楚 95% 才往下走，writing-plans 必须落到</text>
-    <text class="step-text" x="100" y="335">每一步纸上才动手。看似繁琐，比一头扎进去快得多。</text>
-  </svg>
+  <div class="title">superpowers 全家桶，<span class="hl">从想到做的工程链</span></div>
+  <div class="subtitle">五个内置 skill 串起来，一个项目从需求到上线的完整流程</div>
+  <div class="lanes">
+    <div class="lane first"><span class="lane-num">01 想</span><div class="lane-name">brainstorming</div><div class="lane-zh">需求探索</div><div class="lane-io"><b>入：</b>用户痛点<br><b>出：</b>设计文档</div></div>
+    <div class="arr">▶</div>
+    <div class="lane"><span class="lane-num">02 计划</span><div class="lane-name">writing-plans</div><div class="lane-zh">细粒度任务</div><div class="lane-io"><b>入：</b>设计文档<br><b>出：</b>任务清单</div></div>
+    <div class="arr">▶</div>
+    <div class="lane"><span class="lane-num">03 实现</span><div class="lane-name">executing-plans</div><div class="lane-zh">TDD 实现</div><div class="lane-io"><b>入：</b>任务清单<br><b>出：</b>代码 + 测试</div></div>
+    <div class="arr">▶</div>
+    <div class="lane"><span class="lane-num">04 调试</span><div class="lane-name">systematic-debug</div><div class="lane-zh">先根因再修</div><div class="lane-io"><b>入：</b>异常 / bug<br><b>出：</b>根因 + 修复</div></div>
+    <div class="arr">▶</div>
+    <div class="lane last"><span class="lane-num">05 收尾</span><div class="lane-name">finishing-branch</div><div class="lane-zh">PR / 合并</div><div class="lane-io"><b>入：</b>通过测试<br><b>出：</b>PR / 上线</div></div>
+  </div>
+  <div class="stamp">需求搞清 95% 才动手 ✓</div>
+  <div class="footer">研究生必装的 11 个 Skill</div>
 </body></html>

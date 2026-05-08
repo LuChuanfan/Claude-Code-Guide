@@ -1,60 +1,32 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="UTF-8"><title>investigate four stages</title>
+<html lang="en"><head><meta charset="UTF-8"><title>img-10</title>
 <style>
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  html, body { width: 900px; height: 420px; overflow: hidden; }
-  body {
-    background-color: #0F1A2E;
-    background-image: radial-gradient(circle, #1E293B 1px, transparent 1px);
-    background-size: 24px 24px;
-    background-position: 12px 12px;
-    font-family: 'JetBrains Mono', 'SF Mono', 'Consolas', 'PingFang SC', 'Microsoft YaHei', sans-serif;
-    color: #F8FAFC;
-    padding: 28px 60px;
-  }
-  .title { font-size: 18px; color: #67E8F9; letter-spacing: 1px; font-weight: 600; margin-bottom: 6px; }
-  .subtitle { font-size: 13px; color: #94A3B8; margin-bottom: 18px; }
-  .iron-law { background: rgba(248,113,113,0.08); border-left: 3px solid #F87171; padding: 12px 18px; font-size: 13px; color: #FCA5A5; margin-bottom: 24px; letter-spacing: 0.4px; }
-  .stages { display: flex; gap: 14px; }
-  .stage { flex: 1; background: #1E293B; border-top: 3px solid #67E8F9; padding: 16px 14px; border-radius: 4px; position: relative; }
-  .stage-num { position: absolute; top: -12px; left: 14px; background: #0F1A2E; color: #67E8F9; padding: 0 8px; font-size: 11px; font-weight: 700; }
-  .stage-name { font-size: 14px; font-weight: 700; color: #F8FAFC; margin-bottom: 8px; letter-spacing: 0.5px; }
-  .stage-desc { font-size: 11px; color: #CBD5E1; line-height: 1.55; }
-  .stage-output { font-size: 10px; color: #67E8F9; margin-top: 10px; padding-top: 8px; border-top: 1px solid #334155; }
-  .arrows { display: flex; justify-content: space-between; padding: 6px 90px; color: #67E8F9; font-size: 14px; margin-top: -1px; }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{width:1080px;height:520px;overflow:hidden}
+  body{background:#F8F4ED;background-image:radial-gradient(circle at 8% 14%,rgba(244,196,48,.06) 0,transparent 18%),radial-gradient(circle at 92% 86%,rgba(31,31,31,.04) 0,transparent 22%);font-family:'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;color:#1F1F1F;padding:24px 50px;position:relative}
+  body::before{content:'';position:absolute;top:14px;right:30px;width:78px;height:52px;background:#F4C430;opacity:.85;border:2.5px solid #1F1F1F;border-radius:4px 32px 4px 4px;transform:rotate(8deg)}
+  body::after{content:'';position:absolute;bottom:14px;left:22px;width:56px;height:14px;background:#1F1F1F;border-radius:50%;transform:rotate(-15deg);opacity:.85}
+  .title{font-size:46px;font-weight:900;letter-spacing:1px;margin-bottom:4px;line-height:1.1}
+  .title .hl{background:linear-gradient(transparent 58%,#F4C430 58%,#F4C430 94%,transparent 94%);padding:0 6px}
+  .subtitle{font-size:17px;color:#444;margin-bottom:18px;font-weight:500}
+  .iron{background:#FFFCF6;border:3px solid #C0392B;border-left:8px solid #C0392B;padding:10px 18px;font-size:18px;font-weight:800;color:#C0392B;margin-bottom:18px;letter-spacing:0.5px;box-shadow:4px 4px 0 #C0392B}
+  .stages{display:flex;gap:18px;align-items:stretch}
+  .stage{flex:1;background:#FFFCF6;border:3px solid #1F1F1F;border-top:8px solid #1F1F1F;border-radius:6px;padding:14px 14px 12px;box-shadow:5px 5px 0 #1F1F1F;position:relative;min-height:240px}
+  .stage:nth-child(odd){background:#FCE99A}
+  .stage-num{position:absolute;top:-18px;left:14px;background:#F4C430;color:#1F1F1F;padding:2px 12px;border:2.5px solid #1F1F1F;border-radius:4px;font-size:14px;font-weight:900;letter-spacing:0.6px}
+  .stage-name{font-size:26px;font-weight:900;letter-spacing:1px;margin-bottom:8px;margin-top:6px}
+  .stage-desc{font-size:14px;color:#1F1F1F;line-height:1.55;font-weight:500}
+  .stage-out{font-size:13px;color:#1F1F1F;background:rgba(244,196,48,.4);padding:5px 8px;margin-top:10px;border-left:3px solid #1F1F1F;font-weight:700}
+  .footer{position:absolute;bottom:18px;right:50px;font-size:14px;color:#444;background:#FFFCF6;border-left:4px solid #F4C430;padding:3px 12px;transform:rotate(-1deg);font-weight:600}
 </style></head><body>
-  <div class="title">investigate · 系统化调试四阶段</div>
-  <div class="subtitle">EvoHarness3 那次 482 轮卡死，就是按这个流程一步步定位到的</div>
-  <div class="iron-law">铁律 · 没找到根因之前不能写修复代码</div>
+  <div class="title">investigate，<span class="hl">先找根因再写代码</span></div>
+  <div class="subtitle">研究生最容易掉的坑，问题没搞清楚就开始改，掉进无限重试循环</div>
+  <div class="iron">铁律 · 没找到根因之前不能写修复代码</div>
   <div class="stages">
-    <div class="stage">
-      <div class="stage-num">01</div>
-      <div class="stage-name">调查</div>
-      <div class="stage-desc">收集所有相关线索，日志、堆栈、复现条件、最近改了什么。不下结论。</div>
-      <div class="stage-output">→ debug-log.md 写下事实</div>
-    </div>
-    <div class="stage">
-      <div class="stage-num">02</div>
-      <div class="stage-name">分析</div>
-      <div class="stage-desc">从线索里找模式，缩小怀疑范围。区分事实和推测，避免过早下结论。</div>
-      <div class="stage-output">→ 三条最可能的路径</div>
-    </div>
-    <div class="stage">
-      <div class="stage-num">03</div>
-      <div class="stage-name">假设</div>
-      <div class="stage-desc">为最可能的路径写「假设 + 验证方法」。每个假设要有可证伪的实验。</div>
-      <div class="stage-output">→ 验证脚本与预期</div>
-    </div>
-    <div class="stage">
-      <div class="stage-num">04</div>
-      <div class="stage-name">实施</div>
-      <div class="stage-desc">假设被实验确认是根因，才写修复代码。否则回到第二阶段重新分析。</div>
-      <div class="stage-output">→ 修复 + 回归测试</div>
-    </div>
+    <div class="stage"><span class="stage-num">01</span><div class="stage-name">调查</div><div class="stage-desc">收集线索，日志、堆栈、复现条件、最近改了什么。不下结论。</div><div class="stage-out">→ debug-log.md 写下事实</div></div>
+    <div class="stage"><span class="stage-num">02</span><div class="stage-name">分析</div><div class="stage-desc">从线索找模式，缩小怀疑范围。区分事实和推测，避免过早下结论。</div><div class="stage-out">→ 三条最可能的路径</div></div>
+    <div class="stage"><span class="stage-num">03</span><div class="stage-name">假设</div><div class="stage-desc">为最可能的路径写「假设 + 验证方法」。每个假设要有可证伪的实验。</div><div class="stage-out">→ 验证脚本与预期</div></div>
+    <div class="stage"><span class="stage-num">04</span><div class="stage-name">实施</div><div class="stage-desc">假设被实验确认是根因，才写修复代码。否则回到第二阶段重新分析。</div><div class="stage-out">→ 修复 + 回归测试</div></div>
   </div>
-  <div class="arrows">
-    <span>↻</span>
-    <span>↻</span>
-    <span>↻</span>
-  </div>
+  <div class="footer">研究生必装的 11 个 Skill</div>
 </body></html>
