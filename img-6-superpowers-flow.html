@@ -2,39 +2,39 @@
 <html lang="en"><head><meta charset="UTF-8"><title>img-6</title>
 <style>
   *{margin:0;padding:0;box-sizing:border-box}
-  html,body{width:1080px;height:520px;overflow:hidden}
-  body{background:#F8F4ED;background-image:radial-gradient(circle at 8% 14%,rgba(244,196,48,.06) 0,transparent 18%),radial-gradient(circle at 92% 86%,rgba(31,31,31,.04) 0,transparent 22%);font-family:'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;color:#1F1F1F;padding:26px 50px;position:relative}
+  html,body{width:1080px;height:430px;overflow:hidden}
+  body{background:#F8F4ED;background-image:radial-gradient(circle at 8% 14%,rgba(244,196,48,.06) 0,transparent 18%),radial-gradient(circle at 92% 86%,rgba(31,31,31,.04) 0,transparent 22%);font-family:'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;color:#1F1F1F;padding:22px 50px 16px;position:relative}
   body::before{content:'';position:absolute;top:14px;right:30px;width:78px;height:52px;background:#F4C430;opacity:.85;border:2.5px solid #1F1F1F;border-radius:4px 32px 4px 4px;transform:rotate(8deg)}
   body::after{content:'';position:absolute;bottom:14px;left:22px;width:56px;height:14px;background:#1F1F1F;border-radius:50%;transform:rotate(-15deg);opacity:.85}
-  .title{font-size:48px;font-weight:900;letter-spacing:1px;margin-bottom:4px;line-height:1.1}
+  .title{font-size:46px;font-weight:900;letter-spacing:1px;margin-bottom:4px;line-height:1.1}
   .title .hl{background:linear-gradient(transparent 58%,#F4C430 58%,#F4C430 94%,transparent 94%);padding:0 6px}
-  .subtitle{font-size:18px;color:#444;margin-bottom:30px;font-weight:500}
-  .lanes{display:flex;align-items:center;justify-content:space-between;gap:0;margin-top:10px}
-  .lane{flex:1;background:#FFFCF6;border:3px solid #1F1F1F;border-radius:8px;padding:14px 8px 12px;text-align:center;box-shadow:4px 4px 0 #1F1F1F;position:relative;min-height:200px}
+  .subtitle{font-size:17px;color:#444;margin-bottom:14px;font-weight:500}
+  .lanes{display:flex;align-items:stretch;justify-content:space-between;gap:0}
+  .lane{flex:1;background:#FFFCF6;border:3px solid #1F1F1F;border-radius:8px;padding:14px 8px 12px;text-align:center;box-shadow:4px 4px 0 #1F1F1F;position:relative;min-height:230px}
   .lane.first{background:#F4C430}
   .lane.last{background:#FCE99A}
-  .lane-num{display:inline-block;background:#1F1F1F;color:#FFFCF6;font-size:14px;padding:2px 10px;border-radius:99px;margin-bottom:8px;font-weight:700}
-  .lane-name{font-size:18px;font-weight:900;letter-spacing:0.5px;margin-bottom:6px;line-height:1.15;font-family:'JetBrains Mono','Consolas',monospace}
-  .lane-zh{font-size:16px;font-weight:700;color:#1F1F1F;margin-bottom:10px}
-  .lane-io{font-size:13px;color:#333;line-height:1.45;border-top:1.5px dashed #1F1F1F;padding-top:8px;margin-top:6px;text-align:left;padding-left:8px}
-  .lane-io b{color:#1F1F1F}
-  .arr{font-size:28px;color:#1F1F1F;font-weight:900;flex:0 0 22px;text-align:center}
-  .stamp{position:absolute;left:50px;bottom:30px;background:#F4C430;color:#1F1F1F;padding:8px 16px;border:3px solid #1F1F1F;border-radius:6px;font-size:15px;font-weight:800;transform:rotate(-3deg);box-shadow:4px 4px 0 #1F1F1F;max-width:380px;line-height:1.35}
-  .footer{position:absolute;bottom:18px;right:50px;font-size:14px;color:#444;background:#FFFCF6;border-left:4px solid #F4C430;padding:3px 12px;transform:rotate(-1deg);font-weight:600}
+  .lane-num{display:inline-block;background:#1F1F1F;color:#FFFCF6;font-size:15px;padding:3px 11px;border-radius:99px;margin-bottom:8px;font-weight:700}
+  .lane-name{font-size:19px;font-weight:900;letter-spacing:0.4px;margin-bottom:6px;line-height:1.18;font-family:'JetBrains Mono','Consolas',monospace;word-break:break-word}
+  .lane-zh{font-size:17px;font-weight:700;color:#1F1F1F;margin-bottom:10px}
+  .lane-io{font-size:14px;color:#1F1F1F;line-height:1.5;border-top:1.5px dashed #1F1F1F;padding-top:8px;margin-top:6px;text-align:left;padding-left:8px;font-weight:500}
+  .lane-io b{color:#1F1F1F;font-weight:800}
+  .arr{font-size:24px;color:#1F1F1F;font-weight:900;flex:0 0 18px;text-align:center;align-self:center}
+  .stamp{position:absolute;left:50px;bottom:14px;background:#F4C430;color:#1F1F1F;padding:7px 14px;border:3px solid #1F1F1F;border-radius:6px;font-size:15px;font-weight:800;transform:rotate(-3deg);box-shadow:4px 4px 0 #1F1F1F;line-height:1.3}
+  .footer{position:absolute;bottom:14px;right:50px;font-size:14px;color:#444;background:#FFFCF6;border-left:4px solid #F4C430;padding:3px 12px;transform:rotate(-1deg);font-weight:600}
 </style></head><body>
-  <div class="title">superpowers 全家桶，<span class="hl">从想到做的工程链</span></div>
+  <div class="title"><span style="font-family:'JetBrains Mono','Consolas',monospace">superpowers</span> <span class="hl">从想到做的工程链</span></div>
   <div class="subtitle">五个内置 skill 串起来，一个项目从需求到上线的完整流程</div>
   <div class="lanes">
-    <div class="lane first"><span class="lane-num">01 想</span><div class="lane-name">brainstorming</div><div class="lane-zh">需求探索</div><div class="lane-io"><b>入：</b>用户痛点<br><b>出：</b>设计文档</div></div>
+    <div class="lane first"><span class="lane-num">01 想</span><div class="lane-name">brainstorming</div><div class="lane-zh">需求探索</div><div class="lane-io"><b>入</b> 用户痛点<br><b>出</b> 设计文档</div></div>
     <div class="arr">▶</div>
-    <div class="lane"><span class="lane-num">02 计划</span><div class="lane-name">writing-plans</div><div class="lane-zh">细粒度任务</div><div class="lane-io"><b>入：</b>设计文档<br><b>出：</b>任务清单</div></div>
+    <div class="lane"><span class="lane-num">02 计划</span><div class="lane-name">writing-plans</div><div class="lane-zh">细粒度任务</div><div class="lane-io"><b>入</b> 设计文档<br><b>出</b> 任务清单</div></div>
     <div class="arr">▶</div>
-    <div class="lane"><span class="lane-num">03 实现</span><div class="lane-name">executing-plans</div><div class="lane-zh">TDD 实现</div><div class="lane-io"><b>入：</b>任务清单<br><b>出：</b>代码 + 测试</div></div>
+    <div class="lane"><span class="lane-num">03 实现</span><div class="lane-name">executing-plans</div><div class="lane-zh">TDD 实现</div><div class="lane-io"><b>入</b> 任务清单<br><b>出</b> 代码 + 测试</div></div>
     <div class="arr">▶</div>
-    <div class="lane"><span class="lane-num">04 调试</span><div class="lane-name">systematic-debug</div><div class="lane-zh">先根因再修</div><div class="lane-io"><b>入：</b>异常 / bug<br><b>出：</b>根因 + 修复</div></div>
+    <div class="lane"><span class="lane-num">04 调试</span><div class="lane-name">systematic-<wbr>debug</div><div class="lane-zh">先根因再修</div><div class="lane-io"><b>入</b> 异常 / bug<br><b>出</b> 根因 + 修复</div></div>
     <div class="arr">▶</div>
-    <div class="lane last"><span class="lane-num">05 收尾</span><div class="lane-name">finishing-branch</div><div class="lane-zh">PR / 合并</div><div class="lane-io"><b>入：</b>通过测试<br><b>出：</b>PR / 上线</div></div>
+    <div class="lane last"><span class="lane-num">05 收尾</span><div class="lane-name">finishing-<wbr>branch</div><div class="lane-zh">PR / 合并</div><div class="lane-io"><b>入</b> 通过测试<br><b>出</b> PR / 上线</div></div>
   </div>
   <div class="stamp">需求搞清 95% 才动手 ✓</div>
-  <div class="footer">研究生必装的 11 个 Skill</div>
+  <div class="footer">研究生必装的 13 个 Skill</div>
 </body></html>
