@@ -16,7 +16,7 @@
 
 你不用手动敲 `/skill-name` 切换。比如你说「帮我写公众号文章」，khazix-writer skill 自己会跳出来接活。比如你说「研究一下 Harness Engineering」，hv-analysis 自己启动。比如你说「整理一下」，neat-freak 接管。
 
-研究生时间贵，这件事很重要。**装好之后，剩下的事就是说人话，Claude 自己挑工具。**
+**装好之后，剩下的事就是说人话，Claude 自己挑工具。**
 
 ---
 
@@ -122,8 +122,6 @@ Anthropic 官方出品的四件套，公众号上有很多人推过。
 一句话安装命令，对 Claude Code 说,
 
 > 帮我装这个 skill，地址 `https://github.com/KKKKhazix/khazix-skills/tree/main/hv-analysis`
-
-注意，hv-analysis 跟 khazix-writer 是同一个仓库的两个子目录，所以你也可以一次把整个仓库 clone 下来。但我建议按需装，免得仓库内别的 skill 也被注入到 `~/.claude/skills/`。
 
 ### 四、web-access，让 Claude Code 真的能上网
 
@@ -231,9 +229,9 @@ obsidian-bases 处理 .base 文件，做数据库式视图。Obsidian 的 Bases 
 
 obsidian-cli 调用 Obsidian CLI，从命令行操作 vault，搜笔记、查 task、改 property。
 
-![Obsidian 三件套，笔记 / 视图 / 命令](img-12-obsidian-trio.png)
+下面这一段，是用obsidian搭建的个人知识库连线图，看着还挺炫的，每个知识点都可以看到连接了哪些其他知识点。
 
-**我自己怎么用它**，我有一个 LLM-Wiki vault 在 D 盘，参考 Karpathy 的 LLM Wiki 模式搭的，目前里面 25 页核心笔记 + 4 篇我自己的论文 + 9 篇参考文献 + 3 篇 Harness Engineering 系列文章。装了三件套之后，让 Claude Code 帮我整理新笔记、补 frontmatter、重构 wikilink、生成索引页都顺很多。最近最常用的是「帮我把这篇刚抓下来的文章 ingest 进 wiki」这类指令。
+![Obsidian 三件套，笔记 / 视图 / 命令](img-12-obsidian-trio.png)
 
 触发方式，「整理一下我的 obsidian 笔记」「帮我搜一下 vault 里的 X」「在 LLM-Wiki 里加一篇关于 Y 的笔记」。
 
@@ -261,19 +259,23 @@ Anthropic 官方 plugin，专门处理数学奥林匹克级别的证明题和构
 
 跟 superpowers 一样是 Anthropic 官方 plugin marketplace 出品，一行装好。
 
-### 十二、claude-md-management，给你的 CLAUDE.md 找个管家
+### 十二、follow-builders，AI 资讯爆炸时代的官方信息源筛选器
 
-Anthropic 官方 plugin。如果你看过我上一篇文章「大模型时代复利的第一步，创建 CLAUDE.md」，知道我有多看重 CLAUDE.md 这个东西。这个 plugin 就是 CLAUDE.md 的专属管家。
+大模型这两年信息密度太高了。每天 X、公众号、Hacker News、各种博客一起刷，刷半天读到的全是二手三手转述。**消息来源**这件事，今天比以往任何时候都重要。
 
-它做两件事。一件是 audit，扫描你项目里所有的 CLAUDE.md 文件，检查质量，给出修改建议（哪段太冗余、哪段缺关键信息、哪段过期）。另一件是从最近的会话里提炼新规则，建议你加进 CLAUDE.md 里。
+follow-builders 解决的就是这个事。它把一批高信号源整理成一个白名单，包括 Anthropic / OpenAI / xAI / Google DeepMind 这些公司的官方账号，Anthropic 团队成员，YC 总裁 Garry Tan，Box CEO Aaron Levie，还有一堆活跃在一线的 AI builder 推主。每天帮你抓他们的最新动态，做中文翻译加重点提取，最后输出成一份干净的简报。
 
-**我自己怎么用它**，每个月会跑一次 audit，看看 CLAUDE.md 里有没有过期的规则，有没有该删的规则。比如三个月前我写的一条「优先用 GPT-4 而不是 Claude」，早就该改成 Claude 4.7 了，每次 audit 都会被它揪出来。每次会话结束如果产生了新的协作偏好（「以后这种场景我都希望你这样」），让它顺手把这条加进 CLAUDE.md。
+跟自己刷 X 不一样的是，它不会把广告、转发、抽奖、吵架混进来，只保留 builder 自己写的原创内容。AI 资讯基本看它就够了，省下来的时间用来真正干活。
 
-触发方式，「audit 一下我的 CLAUDE.md」「revise CLAUDE.md based on this session」「检查一下 CLAUDE.md」。
+下面这一段，就是它前两天给我的简报片段，原推 + 中文翻译并排。Anthropic 的 Alex Albert、Box CEO Aaron Levie、YC 总裁 Garry Tan 的最新发言一目了然。
+
+![follow-builders 输出的 AI 圈高信号源简报](img-followbuilders.png)
+
+触发方式，「今天 AI 圈有什么新东西」「最近 builder 们在聊什么」「给我做一份 AI 日报」，自动调用。
 
 一句话安装命令，对 Claude Code 说，
 
-> /plugin install claude-md-management@claude-plugins-official
+> 帮我装这个 skill，地址 `https://github.com/zarazhangrui/follow-builders.git`
 
 ### 十三、skill-creator，自己造 skill 的工具（我装了，但没用过）
 
@@ -314,14 +316,14 @@ skill-creator 仍然要装。当你真的要造的时候，它能帮你按规范
 | 设计 | frontend-design | 必装 |
 | 研究 | hv-analysis / investigate | 必装 |
 | 联网 | web-access | 必装 |
-| CLAUDE.md | claude-md-management | 必装 |
+| AI 资讯 | follow-builders | 必装 |
 | 笔记 | obsidian 三件套 | 看你用不用 Obsidian |
 | 学术 | math-olympiad | 看你研究方向 |
 | 其他 | skill-creator | 装着，少用 |
 
 ![研究生必装 skill 清单](img-15-checklist.png)
 
-希望它能帮你放大你的能力，节约你的token。
+希望这些skill能帮你放大你的能力，节约你的token。
 
 ---
 
