@@ -38,8 +38,6 @@
 
 superpowers 不是单一 skill，是一整个 plugin 包，里面有 14 个内置子 skill。把它们串起来就是一条完整的「想 → 设计 → 实现 → 验证 → 收尾」工作流。
 
-我自己最常用的几个，brainstorming（开新项目时的需求探索）、writing-plans（把头脑风暴的东西落成可执行计划）、executing-plans（按计划逐步实现）、systematic-debugging（出 bug 了走根因分析而不是瞎试）、test-driven-development（写代码先写测试）。
-
 ![superpowers 全家桶项目级工作流](img-6-superpowers-flow.png)
 
 这套东西最大的好处，它强迫你按工程的思路推进项目。
@@ -76,7 +74,7 @@ Anthropic 官方出品的四件套，公众号上有很多人推过。
 
 ![hv-analysis 跑出的 Harness Engineering 研究报告片段](img-9-hv-axes.png)
 
-触发方式，「研究一下 X」「调研一下 Y」「帮我深度分析 Z」「帮我看看这个东西怎么样」都会触发。
+触发方式，「用横纵分析法研究一下 X」「调研一下 Y」「帮我深度分析 Z」「帮我看看这个东西怎么样」都会触发。
 
 一句话安装命令，对 Claude Code 说,
 
@@ -88,11 +86,11 @@ Anthropic 官方出品的四件套，公众号上有很多人推过。
 
 它做的事，Claude Code 默认的 WebFetch 工具只能访问公开网页，登录态的、动态渲染的、反爬严格的都拿不到。web-access 通过 Chrome DevTools Protocol 直连本地浏览器，带着你的登录态去抓内容。
 
-小红书、B 站、微博、飞书、知识星球，这些站内内容都能读。还能自动沉淀每个网站的操作经验，按域名存操作记录。
+小红书、B 站、微博、飞书、知识星球，这些站内内容都能读。还能自动沉淀每个网站的操作经验，按域名存操作记录。对于研究生，可以用来批量化下载论文。
 
 ![web-access 带登录态抓站内内容](img-11-web-access.png)
 
-触发方式，「去小红书搜一下 X」「帮我抓一下这个微信公众号文章」「访问一下我那个飞书文档」，自动调用。
+触发方式，「请帮我联网下载**论文」「帮我抓一下这个微信公众号文章」「访问一下我那个飞书文档」，自动调用。
 
 注意，这 skill 装好之后需要 Chrome 最新版 + 允许远程调试（chrome://inspect/#remote-debugging）。如果不开调试端口，Claude Code 连不上你的浏览器。
 
