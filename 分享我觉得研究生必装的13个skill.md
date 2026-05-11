@@ -1,8 +1,6 @@
 # 分享我觉得研究生需要装的 13 个提升效率的 Skill
 
-> **装好就忘了它，工具自己接管。**
-
-下面是我研究生这两年沉淀下来的 13 个 Claude Code skill，每个都附一句话安装方式 + 触发方式。它们不是同一类工具，是分工互补的一整套，下面会逐一介绍。
+下面是我长期使用的 13 个 Claude Code skill，每个都附一句话安装方式 + 触发方式。它们是分工互补的一整套，相互之间没有冲突项，下面会逐一介绍。
 
 ---
 
@@ -20,32 +18,19 @@
 
 **本文导览**
 
-- 一、研究生场景下，我真用得到的 13 个 Skill
+- 一、研究生场景下，适合长期使用的 13 个 Skill
 - 二、装 Skill 之前，先看这两件事
 - 三、最后想推荐的一个公众号
 
 ---
 
-## 一、研究生场景下，我真用得到的 13 个 Skill
+## 一、研究生场景下，适合长期使用的 13 个 Skill
 
-这 13 个 skill 不是同一类工具，是分工互补的一整套。先给你一张总览，你可以按场景挑着装，不必一次全上。
+这 13 个 skill 不是同一类工具，是分工互补的一整套。先给你一张总览图，按场景挑着装，不必一次全上。
 
-- **理清思路 / 按工程流程做事**，superpowers 全家桶、autoplan
-- **写学术汇报 / 出文档**，办公四件套（docx / pptx / xlsx / pdf）
-- **深度研究 / 调研**，hv-analysis（横纵分析法）
-- **联网抓内容**，web-access
-- **公众号长文写作**，khazix-writer
-- **整理记忆 / 知识库**，neat-freak
-- **设计 / 颜值（PPT / 封面 / 海报）**，frontend-design
-- **系统化调试 / 找根因**，investigate
-- **Obsidian 笔记**，obsidian-markdown / obsidian-bases / obsidian-cli 三件套
-- **数学证明 / 边界推导**，math-olympiad
-- **AI 资讯（海外 + 国内）**，follow-builders + AI Hot
-- **自己造 skill**，skill-creator
+![13 个 Skill 按场景分组总览](img-overview.png)
 
-从你最痛的那个场景挑一个装上，跑一周看效果再决定下一个。
-
-这些 skill 都是**装好就自动启用**的。装好之后你不需要记任何咒语，正常说人话就行，匹配到的 skill 自己会跳出来。
+下面按场景一个一个详细介绍。
 
 ### 一、superpowers 全家桶，从想到做完整的工作流
 
@@ -77,7 +62,7 @@ Anthropic 官方出品的四件套，公众号上有很多人推过。
 
 一句话安装命令，对 Claude Code 说，
 
-> 帮我自动装 Anthropic 官方的 docx pptx xlsx pdf 这四个 skill，仓库地址 `https://github.com/anthropics/skills`
+> 帮我装 Anthropic 官方的 docx pptx xlsx pdf 这四个 skill，仓库地址 `https://github.com/anthropics/skills`
 
 注意，xlsx 和 pdf 我用得相对少。如果你不常处理 Excel 表格 / PDF 提取，可以只装 docx 和 pptx，没必要四个全装。
 
@@ -117,8 +102,6 @@ Anthropic 官方出品的四件套，公众号上有很多人推过。
 
 ### 五、khazix-writer，公众号长文写作
 
-数字生命卡兹克写的公众号长文 skill。这篇文章就是它写的。
-
 它做的事情，把卡兹克在公众号上沉淀的一整套写作风格封装成 SKILL.md。包括开头钩子怎么写、节奏怎么把控、哪些词不能出现（说白了 / 意味着什么 / 本质上 这种被滥用的词）、最后跑四层自检（硬性规则、风格一致性、内容质量、活人感）。
 
 触发方式是说「帮我写公众号文章」「按我的风格写一篇」这类话，它会自动跳出来。
@@ -144,8 +127,6 @@ gstack 套件里的一个 skill。superpowers 的好搭档。
 > 帮我装这个 skill，地址 `https://github.com/garrytan/gstack.git`，从仓库里取 autoplan 子目录
 
 ### 七、neat-freak，知识库洁癖
-
-这个 skill 是我个人体验最好的。它来自卡兹克的 khazix-skills 仓库。
 
 每次写代码、写文档、整理记忆告一段落，对 Claude Code 说一句「整理一下」，它就会启动 neat-freak。这 skill 会自动检查你的项目 CLAUDE.md、docs、Agent 记忆里有没有过期信息、有没有相互矛盾、有没有该删没删的临时记录，然后逐条修复。
 
@@ -305,7 +286,7 @@ GitHub 上随手搜一下能搜出几百个。但很多是「我练手写的」�
 
 我自己排查 skill 的时候，主要还是得看来源，来源不明的 skill 需要非常慎重。
 
-### 第二件，每次装新 skill 之前，让 Claude Code 先帮你检查一下
+### 第二件，每次装新 skill 之前，可以让 Claude Code 先帮你检查一下
 
 装新 skill 之前，可以对 Claude Code 说这一句，让它先检查一下与目前 skill 的冲突和安装必要性。
 
@@ -323,11 +304,7 @@ Claude Code 会自己去 GitHub 看仓库、扫你 `~/.claude/skills/` 已装的
 
 ## 三、最后想推荐的一个公众号
 
-这篇文章里你应该已经注意到了，反复出现了 khazix-writer、hv-analysis、neat-freak、AI Hot 这几个 skill，全部都是同一个人写的，**数字生命卡兹克**。
-
-我这两年关于 AI 工具、大模型用法、Claude Code 心得，很大一部分是从他公众号那儿学的。skill 这件事他领先半年到一年，写得也最诚恳，几乎是中文圈里这个赛道的标杆。
-
-想跟上 AI 圈最近的工具进展，去微信搜「数字生命卡兹克」订阅一下，比刷十个泛 AI 号都管用。
+这篇文章里你应该已经注意到了，反复出现了 khazix-writer、hv-analysis、neat-freak、AI Hot 这几个 skill，全部都是同一个人写的，**数字生命卡兹克**。我这两年关于 AI 工具、大模型用法、Claude Code 心得，很大一部分是从他公众号那儿学的。
 
 ---
 
