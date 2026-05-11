@@ -2,35 +2,32 @@
 <html lang="en"><head><meta charset="UTF-8"><title>img-overview</title>
 <style>
   *{margin:0;padding:0;box-sizing:border-box}
-  html,body{width:1080px;height:620px;overflow:hidden}
-  body{background:#F8F4ED;background-image:radial-gradient(circle at 8% 14%,rgba(244,196,48,.06) 0,transparent 18%),radial-gradient(circle at 92% 86%,rgba(31,31,31,.04) 0,transparent 22%);font-family:'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;color:#1F1F1F;padding:24px 50px 22px;position:relative}
+  html,body{width:1080px;height:720px;overflow:hidden}
+  body{background:#F8F4ED;background-image:radial-gradient(circle at 8% 14%,rgba(244,196,48,.06) 0,transparent 18%),radial-gradient(circle at 92% 86%,rgba(31,31,31,.04) 0,transparent 22%);font-family:'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;color:#1F1F1F;padding:28px 50px 22px;position:relative}
   body::before{content:'';position:absolute;top:14px;right:30px;width:78px;height:52px;background:#F4C430;opacity:.85;border:2.5px solid #1F1F1F;border-radius:4px 32px 4px 4px;transform:rotate(8deg)}
   body::after{content:'';position:absolute;bottom:14px;left:22px;width:56px;height:14px;background:#1F1F1F;border-radius:50%;transform:rotate(-15deg);opacity:.85}
-  .title{font-size:42px;font-weight:900;letter-spacing:1px;margin-bottom:4px;line-height:1.1}
+  .title{font-size:46px;font-weight:900;letter-spacing:1px;margin-bottom:22px;line-height:1.1}
   .title .hl{background:linear-gradient(transparent 58%,#F4C430 58%,#F4C430 94%,transparent 94%);padding:0 6px}
-  .subtitle{font-size:16px;color:#444;margin-bottom:18px;font-weight:500}
-  .grid{display:grid;grid-template-columns:1fr 1fr;gap:10px 16px}
-  .card{background:#FFFCF6;border:2.5px solid #1F1F1F;border-radius:6px;padding:10px 14px;box-shadow:3px 3px 0 #1F1F1F;display:flex;flex-direction:column;gap:4px;min-height:62px;justify-content:center}
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:12px 18px}
+  .card{background:#FFFCF6;border:2.5px solid #1F1F1F;border-radius:6px;padding:11px 16px;box-shadow:3px 3px 0 #1F1F1F;display:flex;flex-direction:column;gap:6px;min-height:72px;justify-content:center}
   .card:nth-child(odd){background:#FCFAF3}
-  .card-tag{display:inline-block;background:#F4C430;padding:2px 9px;border:2px solid #1F1F1F;border-radius:4px;font-size:13px;font-weight:800;align-self:flex-start;letter-spacing:0.3px}
-  .card-skill{font-family:'JetBrains Mono','Consolas',monospace;font-size:13.5px;color:#1F1F1F;font-weight:600;letter-spacing:0.2px;line-height:1.35}
-  .stamp{position:absolute;left:50px;bottom:32px;background:#F4C430;color:#1F1F1F;padding:7px 14px;border:3px solid #1F1F1F;border-radius:6px;font-size:14px;font-weight:800;transform:rotate(-3deg);box-shadow:4px 4px 0 #1F1F1F;line-height:1.3}
+  .card-tag{display:inline-block;background:#F4C430;padding:2px 10px;border:2px solid #1F1F1F;border-radius:4px;font-size:14px;font-weight:800;align-self:flex-start;letter-spacing:0.3px}
+  .card-skill{font-family:'JetBrains Mono','Consolas',monospace;font-size:16px;color:#1F1F1F;font-weight:600;letter-spacing:0.2px;line-height:1.35}
   .footer{position:absolute;bottom:22px;right:50px;font-size:13px;color:#444;background:#FFFCF6;border-left:4px solid #F4C430;padding:3px 12px;transform:rotate(-1deg);font-weight:600}
 </style></head><body>
   <div class="title">13 个 Skill 总览，<span class="hl">按场景挑着装</span></div>
-  <div class="subtitle">不必一次全上，从你最痛的那个场景开始</div>
   <div class="grid">
     <div class="card"><div class="card-tag">理清思路 / 按工程流程做事</div><div class="card-skill">superpowers 全家桶、autoplan</div></div>
-    <div class="card"><div class="card-tag">写学术汇报 / 出文档</div><div class="card-skill">docx / pptx / xlsx / pdf 四件套</div></div>
+    <div class="card"><div class="card-tag">写学术汇报 / 出文档</div><div class="card-skill">docx / pptx / xlsx / pdf + frontend-design</div></div>
     <div class="card"><div class="card-tag">深度研究 / 调研</div><div class="card-skill">hv-analysis 横纵分析法</div></div>
-    <div class="card"><div class="card-tag">联网抓内容</div><div class="card-skill">web-access</div></div>
+    <div class="card"><div class="card-tag">连接浏览器抓内容</div><div class="card-skill">web-access</div></div>
     <div class="card"><div class="card-tag">公众号长文写作</div><div class="card-skill">khazix-writer</div></div>
     <div class="card"><div class="card-tag">整理记忆 / 知识库</div><div class="card-skill">neat-freak</div></div>
     <div class="card"><div class="card-tag">设计 / 颜值（PPT / 封面 / 海报）</div><div class="card-skill">frontend-design</div></div>
     <div class="card"><div class="card-tag">系统化调试 / 找根因</div><div class="card-skill">investigate</div></div>
     <div class="card"><div class="card-tag">Obsidian 笔记</div><div class="card-skill">obsidian-markdown / bases / cli</div></div>
     <div class="card"><div class="card-tag">数学证明 / 边界推导</div><div class="card-skill">math-olympiad</div></div>
-    <div class="card"><div class="card-tag">AI 资讯（海外 + 国内）</div><div class="card-skill">follow-builders + AI Hot</div></div>
+    <div class="card"><div class="card-tag">AI 资讯</div><div class="card-skill">follow-builders + AI Hot</div></div>
     <div class="card"><div class="card-tag">自己造 skill</div><div class="card-skill">skill-creator</div></div>
   </div>
   <div class="footer">研究生必装的 13 个 Skill</div>

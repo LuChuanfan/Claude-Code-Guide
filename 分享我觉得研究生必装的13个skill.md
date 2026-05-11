@@ -226,9 +226,9 @@ follow-builders 解决的就是这个事。它把一批高信号源整理成一�
 
 > 帮我装这个 skill，地址 `https://github.com/zarazhangrui/follow-builders.git`
 
-**补充一个中文向的搭档，AI Hot**。follow-builders 抓的是英文 X 上的一线 builder，覆盖海外动态。中文圈的 AI 热点它够不到，这就是数字生命卡兹克最近开源的 AI Hot 派上用场的地方。AI Hot 是中文 AI 资讯查询 skill，专门盯国内 AI 圈的发布、模型、产品、论文、行业动态，正好跟 follow-builders 一英一中互补。
+**补充一个搭档，AI Hot**。follow-builders 订阅的是一批指定的 builder 推主和官方账号，颗粒细但范围窄。AI Hot 是数字生命卡兹克最近开源的 skill，输出是中文，做面更广的 AI 圈热点扫描，发布、模型、产品、论文、行业动态都覆盖。两个一起用，一个深一个广。
 
-我自己的搭配，每天打开 Claude Code 先说「给我做一份 AI 日报」走 follow-builders，再说「今天 AI HOT 有什么」走 AI Hot，海外 + 国内两边一次看完，比我过去刷半小时 X 加半小时公众号效率高得多。
+我自己的搭配，每天打开 Claude Code 先说「给我做一份 AI 日报」走 follow-builders，再说「今天 AI HOT 有什么」走 AI Hot，深度 + 广度两边一次看完，比我过去刷半小时 X 加半小时公众号效率高得多。
 
 一句话安装命令，对 Claude Code 说，
 
