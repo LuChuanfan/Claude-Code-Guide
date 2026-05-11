@@ -1,10 +1,8 @@
-# 分享我觉得研究生必装的 13 个 Skill
+# 分享我觉得研究生需要装的 13 个提升效率的 Skill
 
-> **装一堆没用的 skill，反而让 Claude 变笨。**
+> **装好就忘了它，工具自己接管。**
 
-每装一个 skill，它的描述都会被预加载进 Claude 的系统提示词。装的多了，描述被自动压缩，关键词丢失，Claude 看不清每个 skill 是干嘛的，于是就懒得调用了。所以，skill 不是越多越好。
-
-下面我会把我现在还在用的 13 个 skill 都列出来，每个都附一句话安装方式 + 我自己在什么场景下真的用过它。但在那之前，我得先把另一件事说清楚。
+下面是我研究生这两年沉淀下来的 13 个 Claude Code skill，每个都附一句话安装方式 + 触发方式。它们不是同一类工具，是分工互补的一整套，下面会逐一介绍。
 
 ---
 
@@ -22,50 +20,30 @@
 
 **本文导览**
 
-- 一、装 Skill 之前，先看这两件事
-- 二、研究生场景下，我真用得到的 13 个 Skill
+- 一、研究生场景下，我真用得到的 13 个 Skill
+- 二、装 Skill 之前，先看这两件事
+- 三、最后想推荐的一个公众号
 
 ---
 
-## 一、装 Skill 之前，先看这两件事
+## 一、研究生场景下，我真用得到的 13 个 Skill
 
-### 第一件，下载顺序，官方 > 大V > 个人
+这 13 个 skill 不是同一类工具，是分工互补的一整套。先给你一张总览，你可以按场景挑着装，不必一次全上。
 
-这是我个人的踩坑经验，不是官方建议，但我现在装任何 skill 之前都会自觉过一遍这个顺序。
+- **理清思路 / 按工程流程做事**，superpowers 全家桶、autoplan
+- **写学术汇报 / 出文档**，办公四件套（docx / pptx / xlsx / pdf）
+- **深度研究 / 调研**，hv-analysis（横纵分析法）
+- **联网抓内容**，web-access
+- **公众号长文写作**，khazix-writer
+- **整理记忆 / 知识库**，neat-freak
+- **设计 / 颜值（PPT / 封面 / 海报）**，frontend-design
+- **系统化调试 / 找根因**，investigate
+- **Obsidian 笔记**，obsidian-markdown / obsidian-bases / obsidian-cli 三件套
+- **数学证明 / 边界推导**，math-olympiad
+- **AI 资讯（海外 + 国内）**，follow-builders + AI Hot
+- **自己造 skill**，skill-creator
 
-第一档，**Anthropic 官方维护的 skill**。
-
-仓库在 `https://github.com/anthropics/skills`。这里面的 skill 经过 Anthropic 自己内部团队反复打磨，描述精炼、流程稳健、跨平台适配过。docx、pptx、xlsx、pdf、frontend-design、skill-creator 这些都在这。装这一档的好处，来源非常可靠。
-
-第二档，**圈内大 V 维护或启发的 skill**。
-
-数字生命卡兹克的 khazix-skills 仓库（khazix-writer / hv-analysis / neat-freak 都在这），一泽 Eze 的 web-access，gstack 的 investigate / autoplan，这是圈内主要在维护 skill 的几位。还有像 Karpathy 这种顶级大 V，他自己虽然没专门做 skill 仓库，但他开源的 LLM Wiki 个人知识库范式启发了一大批笔记 / 知识库类 skill 的设计思路。这一档的特点，触发词写得狠，跟 Claude Code 的兼容性更新得勤。
-
-第三档，**个人项目里偶尔写的 skill**。
-
-GitHub 上随手搜一下能搜出几百个。但很多是「我练手写的」，描述不规范、依赖不写清楚、半年没更新。装这一档之前，至少看一眼这个仓库最近有没有 commit、issue 区有没有人在维护。
-
-![下载 skill 优先级金字塔](img-2-pyramid.png)
-
-我自己排查 skill 的时候，主要还是得看来源，来源不明的 skill 需要非常慎重。
-
-### 第二件，每次装新 skill 之前，让 Claude Code 先帮你检查一下
-
-装新 skill 之前，可以对 Claude Code 说这一句，让它先检查一下与目前skill的冲突和安装必要性。
-
-> ***（skill 链接）。请帮我检查这个 skill，看看其有什么作用，安装的必要性和目前 skill 冲突。
-
-这句话能帮你过滤掉至少一半的「冲动装机」。
-
-Claude Code 会自己去 GitHub 看仓库、扫你 `~/.claude/skills/` 已装的 SKILL.md 描述、然后判断必要性。如果它告诉你「这个跟你已装的 X skill 高度重叠，建议你二选一」，就可以选择其中一个来装。
-
-下面这张图，就是我前两天差点装 `/feature-dev` 这个 skill 时，让 Claude Code 跑这条咒语的真实输出。它逐项对照了 feature-dev 跟我现有 superpowers 流程的覆盖关系，最后建议我别装，理由是会跟现有流程产生路径冲突。
-
-![让 Claude Code 检查新 skill 的必要性，真实输出](img-3-decision-flow.png)
-
----
-
-## 二、研究生场景下，我真用得到的 13 个 Skill
+从你最痛的那个场景挑一个装上，跑一周看效果再决定下一个。
 
 这些 skill 都是**装好就自动启用**的。装好之后你不需要记任何咒语，正常说人话就行，匹配到的 skill 自己会跳出来。
 
@@ -112,8 +90,6 @@ Anthropic 官方出品的四件套，公众号上有很多人推过。
 下面这一段，是我让 hv-analysis 跑「Harness Engineering 是怎么来的」时，输出的真实研究报告片段（纵轴叙事部分）。
 
 ![hv-analysis 跑出的 Harness Engineering 研究报告片段](img-9-hv-axes.png)
-
-
 
 触发方式，「研究一下 X」「调研一下 Y」「帮我深度分析 Z」「帮我看看这个东西怎么样」都会触发。
 
@@ -223,7 +199,7 @@ obsidian-bases 处理 .base 文件，做数据库式视图。Obsidian 的 Bases 
 
 obsidian-cli 调用 Obsidian CLI，从命令行操作 vault，搜笔记、查 task、改 property。
 
-下面这一段，是用obsidian搭建的个人知识库连线图，看着还挺炫的，每个知识点都可以看到连接了哪些其他知识点。
+下面这一段，是用 obsidian 搭建的个人知识库连线图，看着还挺炫的，每个知识点都可以看到连接了哪些其他知识点。
 
 ![Obsidian 三件套，笔记 / 视图 / 命令](img-12-obsidian-trio.png)
 
@@ -231,7 +207,7 @@ obsidian-cli 调用 Obsidian CLI，从命令行操作 vault，搜笔记、查 ta
 
 一句话安装命令，对 Claude Code 说，
 
-> 帮我装 obsidian-markdown obsidian-bases obsidian-cli 这三个 skill。先去 GitHub 搜一下源仓库再装。
+> 帮我装 obsidian-markdown obsidian-bases obsidian-cli 这三个 skill，地址 https://github.com/kepano/obsidian-skills.git。
 
 ### 十一、math-olympiad，给做奥数 / 竞赛题相关研究的同学
 
@@ -269,15 +245,21 @@ follow-builders 解决的就是这个事。它把一批高信号源整理成一�
 
 > 帮我装这个 skill，地址 `https://github.com/zarazhangrui/follow-builders.git`
 
+**补充一个中文向的搭档，AI Hot**。follow-builders 抓的是英文 X 上的一线 builder，覆盖海外动态。中文圈的 AI 热点它够不到，这就是数字生命卡兹克最近开源的 AI Hot 派上用场的地方。AI Hot 是中文 AI 资讯查询 skill，专门盯国内 AI 圈的发布、模型、产品、论文、行业动态，正好跟 follow-builders 一英一中互补。
+
+我自己的搭配，每天打开 Claude Code 先说「给我做一份 AI 日报」走 follow-builders，再说「今天 AI HOT 有什么」走 AI Hot，海外 + 国内两边一次看完，比我过去刷半小时 X 加半小时公众号效率高得多。
+
+一句话安装命令，对 Claude Code 说，
+
+> 帮我装 AI Hot skill，地址 `https://aihot.virxact.com/aihot-skill/`
+
 ### 十三、skill-creator，自己造 skill 的工具（我装了，但没用过）
 
 这是个有点反差的安排。我装了 skill-creator，但到目前为止一个 skill 都没自己创建过。
 
 理由很简单，上面这些 skill 已经覆盖了我研究生场景里 95% 的需求。剩下那 5%，要么用 CLAUDE.md 一段话搞定，要么是真的太冷门，造出来三个月用不上一次。
 
-我反而想分享一句反共识的话。
-
-skill-creator 的官方介绍里有一条，「最牛的 skill 永远是你自己造的那个」。这话没错。但这句话在 99% 的研究生身上不成立。
+skill-creator 的官方介绍里有一条，「最牛的 skill 永远是你自己造的那个」。这话没错。但这句话在研究生身上可能不成立。
 
 研究生最稀缺的不是「自己造一个 skill」的能力，而是「忍住不造的耐心」。每个 skill 都有维护成本、加载成本、上下文挤占成本。一个研究生项目周期大概 3 到 6 个月，你为这个项目造的 skill 在项目结束之后基本就废了。
 
@@ -291,13 +273,63 @@ skill-creator 的官方介绍里有一条，「最牛的 skill 永远是你自�
 
 skill-creator 仍然要装。当你真的要造的时候，它能帮你按规范走完创建 → 测试 → 评估 → 优化的全流程，不至于自己手搓 SKILL.md。
 
-一句话安装命令，对 Claude Code 说，
-
-> 帮我装 Anthropic 官方的 skill-creator skill，仓库 `https://github.com/anthropics/skills`
+skill-creator 跟前面的 docx / pptx / frontend-design 在同一个 Anthropic 官方仓库 `https://github.com/anthropics/skills`。如果你前面装那批的时候是整个仓库 clone 下来的，skill-creator 已经在里面了，不用再单独装。
 
 ---
 
+## 二、装 Skill 之前，先看这两件事
 
+讲完 13 个 skill，反过来说一句反共识的话，**skill 不是越多越好**。
+
+每装一个 skill，它的描述都会被预加载进 Claude 的系统提示词。装的多了，描述被自动压缩，关键词丢失，Claude 看不清每个 skill 是干嘛的，于是就懒得调用了。我自己装到 49 个的时候，明明装了 khazix-writer 让它写公众号，它就是不调用，最后只能裁回 13 个。
+
+所以装新 skill 之前，有两件事每次都该过一遍。
+
+### 第一件，下载顺序，官方 > 大V > 个人
+
+这是我个人的踩坑经验，不是官方建议，但我现在装任何 skill 之前都会自觉过一遍这个顺序。
+
+第一档，**Anthropic 官方维护的 skill**。
+
+仓库在 `https://github.com/anthropics/skills`。这里面的 skill 经过 Anthropic 自己内部团队反复打磨，描述精炼、流程稳健、跨平台适配过。docx、pptx、xlsx、pdf、frontend-design、skill-creator 这些都在这。装这一档的好处，来源非常可靠。
+
+第二档，**圈内大 V 维护或启发的 skill**。
+
+数字生命卡兹克的 khazix-skills 仓库（khazix-writer / hv-analysis / neat-freak / AI Hot 都在这），一泽 Eze 的 web-access，gstack 的 investigate / autoplan，这是圈内主要在维护 skill 的几位。还有像 Karpathy 这种顶级大 V，他自己虽然没专门做 skill 仓库，但他开源的 LLM Wiki 个人知识库范式启发了一大批笔记 / 知识库类 skill 的设计思路。这一档的特点，触发词写得狠，跟 Claude Code 的兼容性更新得勤。
+
+第三档，**个人项目里偶尔写的 skill**。
+
+GitHub 上随手搜一下能搜出几百个。但很多是「我练手写的」，描述不规范、依赖不写清楚、半年没更新。装这一档之前，至少看一眼这个仓库最近有没有 commit、issue 区有没有人在维护。
+
+![下载 skill 优先级金字塔](img-2-pyramid.png)
+
+我自己排查 skill 的时候，主要还是得看来源，来源不明的 skill 需要非常慎重。
+
+### 第二件，每次装新 skill 之前，让 Claude Code 先帮你检查一下
+
+装新 skill 之前，可以对 Claude Code 说这一句，让它先检查一下与目前 skill 的冲突和安装必要性。
+
+> ***（skill 链接）。请帮我检查这个 skill，看看其有什么作用，安装的必要性和目前 skill 冲突。
+
+这句话能帮你过滤掉至少一半的「冲动装机」。
+
+Claude Code 会自己去 GitHub 看仓库、扫你 `~/.claude/skills/` 已装的 SKILL.md 描述、然后判断必要性。如果它告诉你「这个跟你已装的 X skill 高度重叠，建议你二选一」，就可以选择其中一个来装。
+
+下面这张图，就是我前两天差点装 `/feature-dev` 这个 skill 时，让 Claude Code 跑这条咒语的真实输出。它逐项对照了 feature-dev 跟我现有 superpowers 流程的覆盖关系，最后建议我别装，理由是会跟现有流程产生路径冲突。
+
+![让 Claude Code 检查新 skill 的必要性，真实输出](img-3-decision-flow.png)
+
+---
+
+## 三、最后想推荐的一个公众号
+
+这篇文章里你应该已经注意到了，反复出现了 khazix-writer、hv-analysis、neat-freak、AI Hot 这几个 skill，全部都是同一个人写的，**数字生命卡兹克**。
+
+我这两年关于 AI 工具、大模型用法、Claude Code 心得，很大一部分是从他公众号那儿学的。skill 这件事他领先半年到一年，写得也最诚恳，几乎是中文圈里这个赛道的标杆。
+
+想跟上 AI 圈最近的工具进展，去微信搜「数字生命卡兹克」订阅一下，比刷十个泛 AI 号都管用。
+
+---
 
 最后留一份「研究生必装清单」给你打表对照。
 
@@ -308,14 +340,14 @@ skill-creator 仍然要装。当你真的要造的时候，它能帮你按规范
 | 设计 | frontend-design | 必装 |
 | 研究 | hv-analysis / investigate | 必装 |
 | 联网 | web-access | 必装 |
-| AI 资讯 | follow-builders | 必装 |
+| AI 资讯 | follow-builders + AI Hot | 必装 |
 | 笔记 | obsidian 三件套 | 看你用不用 Obsidian |
 | 学术 | math-olympiad | 看你研究方向 |
 | 其他 | skill-creator | 装着，少用 |
 
 ![研究生必装 skill 清单](img-15-checklist.png)
 
-希望这些skill能帮你放大你的能力，节约你的token。
+希望这些 skill 能帮你放大你的能力，节约你的 token。
 
 ---
 
